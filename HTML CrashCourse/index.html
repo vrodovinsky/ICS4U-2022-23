@@ -7,15 +7,119 @@
     <title>HTML Crash Course</title>
 </head>
 <body>
-    
-</body>
-    <h1>This is Main Header</h1>
-    <h2>This is the Second Level</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis voluptas cumque odit laborum architecto ullam perspiciatis eaque, rerum ipsum eum quibusdam laboriosam, repellat molestias porro cupiditate! Minus nobis assumenda omnis dolore. Nobis optio perferendis, dicta illo veniam nam minima voluptatibus. Ullam consequatur delectus sequi eum ipsum in corporis itaque earum!</p>
-    <h2>This is still Second Level</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, in mollitia. Blanditiis, soluta animi! Ea perferendis impedit eligendi maxime enim in iure voluptatum reiciendis illum odit ipsam at similique nesciunt, saepe quas facere nostrum earum eius molestias fuga beatae ipsa qui placeat. Tempore consequuntur qui nobis eligendi, veritatis expedita cum.</p>
+    <!-- headings -->
+    <h1>Heading One</h1>
+    <h2>Heading Two</h2>
+    <h3>Heading Three</h3>
+    <h4>Heading Four</h4>
+    <h5>Heading Five</h5>
+    <h6>Heading Six</h6>
 
-    <span>Lorem ipsum dolor sit amet.</span>
-    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-    <span>Click <a href="https://mlb.com">here</a> to go to mlb.com</span>
+    <!-- paragraphs -->
+    <p>Lorem ipsum dolor <em> hello world</em> amet, consectetur adipisicing elit. Ducimus ut alias totam facilis natus tenetur officia provident, tempora commodi, repudiandae saepe quisquam. Eius reiciendis commodi voluptate incidunt blanditiis ad eveniet.</p>
+    <p>Lorem ipsum,<a href="http://google.com" target="_blank">testing testing</a>  dolor sit amet consectetur adipisicing elit. Aut, nostrum. Modi pariatur unde nesciunt vel minus eligendi aliquam aliquid dolorem.</p>
+
+    <!-- Lists-->
+    <ul>
+        <li> List Item 1</li>
+        <li> List Item 2</li>
+        <li> List Item 3</li>
+        <li> List Item 4</li>
+    </ul>
+
+    <ol>
+        <li> List Item 1</li>
+        <li> List Item 2</li>
+        <li> List Item 3</li>
+        <li> List Item 4</li>
+    </ol>
+
+    <!-- Tables -->
+    <table>
+        <thead>
+            <tr>
+                <th> Name</th>
+                <th> Email</th>
+                <th> Age </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> Veronica Rodovinsky</td>
+                <td> some email</td>
+                <td> 16 </td>
+            </tr>
+            <tr>
+                <td> Someyhing somwthing</td>
+                <td> hello</td>
+                <td> 57 </td>
+            </tr>
+            <tr>
+                <td> another name </td>
+                <td> another email </td>
+                <td> 33 </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <hr>
+    <!-- Forms-->
+    <form action="process.php" method="POST">
+       <div>
+        <label> First name </label>
+            <input type="text" name="firstName">
+            
+        
+    </div> 
+    <div>
+        <label> Last Name </label>
+        <input type="text" name="lastName">
+    </div>
+    <div>
+        <label> Message </label>
+            <textarea name="Message" ></textarea>
+        
+    </div>
+
+    <div>
+        <label> Gender </label>
+            <select name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+       
+    </div>
+
+    <div>
+        <label> Age </label>
+        <input type="number" name="age">
+    
+    </div>
+
+    <div>
+        <label> Birthdate </label>
+        <input type="date" name="birthday">
+    
+    </div>
+        <input type="submit" name="submit" value="submit">
+    </form>
+
+    <!-- Button -->
+
+    <button> Click Me</button>
+
+    <!--Image tag -->
+    <a href="images/download.jpeg">
+        <img src="images/download.jpeg" alt="My Sample Image" width="200">
+    </a>
+    
+    <!-- Quotations -->
+    <blockquote cite="https://google.com">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium magni sed, totam cupiditate architecto laboriosam consectetur asperiores dolore ab iusto!
+    </blockquote>
+
+    <p> The <abbr title="World Wide Web">WWW</abbr> is the best</p>
+
+    <p> <cite> HTML Crash Course</cite> by Veronica </p>
+</body>
 </html>
