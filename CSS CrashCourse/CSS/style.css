@@ -1,0 +1,123 @@
+/**
+ * * {
+    margin: 0;
+    padding: 0;
+    sets for all
+}
+ */
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover{
+    color: red;
+}
+
+a:active{
+    color: green;
+}
+
+a:visited{
+    color: yellow;
+}
+
+
+body{
+    background-color: #f4f4f4;
+    color: #555555;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    /** same as above just shorter
+     * font: bold 30px Arial, Helvetica, sans-serif;
+     */
+
+     line-height: 1.6em;
+
+}
+
+.container{
+    width: 80%;
+    /** if width set to pixels the text won't adapt to the size of the webpage */
+  margin: auto;
+}
+
+.box-1{
+    background-color: #333333;
+    color: #fff;
+
+    border-right: 5px red solid;
+    border-left: 5px red solid;
+    border-top: 5px red solid;
+    border-bottom: 5px red solid;
+
+    /** same as above
+     * border: 5px red solid;
+     */
+
+     border-width: 3px;
+     border-bottom-width: 10px;
+     border-top-style: dotted;
+
+     padding-top: 100px;
+
+     margin: 20px;
+}
+
+.box-1 h1{ /** only targets h1 in the box-1 class */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    word-spacing: 1em;
+}
+
+.box-2{
+    border: 3px dotted #ccc;
+    padding: 20px;
+    margin: 20px;
+}
+
+.categories{
+    border: 1px #ccc solid;
+    padding: 10px;
+    border-radius: 15px;
+}
+.categories h2{
+
+    text-align: center;
+}
+
+.categories ul{
+    padding: 0;
+    list-style: square;
+    padding-left: 20px;
+}
+
+.categories li{
+    padding-bottom: 10px;
+    border-bottom: dotted 1px #000;
+    list-style-image: url('../images/download.jpeg');
+}
+
+.myForm{
+    padding: 20px;
+}
+
+.myForm label{
+    display: block;
+}
+
+.myForm input{
+    padding: 8px;
+    width: 100%;
+}
+ 
+.block{
+    float:left;
+    width: 33.3%;
+}
