@@ -1,0 +1,35 @@
+body {
+    font-family: 'Times New Roman', Times, serif
+}
+
+
+#navbar {
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.item a {
+    text-decoration: none;
+    color: aliceblue;
+    margin: 20px;
+    font-weight: 200;
+}
+
+.item a:hover {
+    color: black;
+}
+
+.item li {
+    list-style: none;
+    display: inline-flex;
+}
+
+/** how to change img colour  
+ * https: //codepen.io/sosuke/pen/Pjoqqp */
+.image img {
+    width: 50px;
+    filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+}
