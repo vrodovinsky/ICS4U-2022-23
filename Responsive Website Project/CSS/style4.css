@@ -1,7 +1,10 @@
 body {
-    font-family: 'Times New Roman', Times, serif
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.1em;
+    line-height: 1.5;
+    text-align: center;
 }
-
 
 #navbar {
     background-color: lightblue;
@@ -32,4 +35,16 @@ body {
 .image img {
     width: 50px;
     filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+}
+
+/** Footer */
+#main-footer {
+    padding: 1em;
+    background: lightblue;
+    color: aliceblue;
+    text-align: center;
+}
+
+footer .grid {
+    background-color: lightblue;
 }
