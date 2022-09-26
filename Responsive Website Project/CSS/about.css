@@ -40,13 +40,22 @@ body {
 }
 
 
-#header-background {
-    min-height: 400px;
-    background: url('../images/work.jpeg')no-repeat center;
-    background-size: cover;
-    text-align: center;
-    color: #ffffff;
+#container{
+    height: 400px;
+    background-image: url('../images/elephant-contact.png');
+    background-position: center;
 }
+
+#header{
+    color: white;
+    margin-top: 0px;
+    border-top: white solid 2px;
+    padding-top: 40px;
+    font-size: 65px;
+}
+
+
+
 
 /** Form */
 #newsletter {
