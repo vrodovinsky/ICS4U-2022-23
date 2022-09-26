@@ -46,13 +46,14 @@ body {
 }
 
 .faq-link:hover{
-    color: #e27d60;
+    color:#c38d9e;
 }
 
-#section-a{
+#header{
     text-align:center;
     font-size: 35px;
     margin-left: 50px;
+    color: #c38d9e;
 }
 
 #section-b{
@@ -60,6 +61,11 @@ body {
     margin-left: 50px;
     margin-top: 0;
 }
+
+#section-b h4{
+    color: #c38d9e;
+}
+
 
 .social-media{
     display: flex;
@@ -77,6 +83,7 @@ body {
     display: flex;
     justify-content: center;
 }
+
 .container {
     
     margin-bottom: 100px;
@@ -109,6 +116,7 @@ body {
 #name label, #email label, #message label{
     display: flex;
     justify-content: left;
+    color: #c38d9e;
 }
 
 #name input, #last-name input, #email input, #message input{
