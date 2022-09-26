@@ -35,6 +35,7 @@ body {
  * https: //codepen.io/sosuke/pen/Pjoqqp */
 .image img {
     width: 50px;
+    margin-left: 10px;
     filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
 }
 
