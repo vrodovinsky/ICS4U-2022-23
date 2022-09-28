@@ -15,14 +15,14 @@ body{
     flex-wrap: wrap;
 }
 
-.item a {
+a {
     text-decoration: none;
-    color: aliceblue;
+    color: white;
     margin: 20px;
     font-weight: 200;
 }
 
-.item a:hover {
+a:hover {
     color: black;
 }
 
@@ -41,9 +41,34 @@ body{
 
 #section-a{
     text-align: center;
-    background-color: #e27d60;
     margin: 50px;
+
 }
+
+#section-c{
+    display: flex;
+    justify-content: center;
+}
+
+#box{
+    max-width: 900px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    
+    padding: 10px;
+    display: grid;
+    
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+
+    background-color: #c38d9e;
+}
+
+.link{
+    color: white;
+}
+
 
 /** Form */
 #newsletter {
@@ -82,7 +107,7 @@ body{
 #main-footer{
     padding: 1em;
     background: #e27d60;
-    color: aliceblue;
+    color: white;
     text-align: center;
 }
 footer .grid{
