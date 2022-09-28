@@ -38,6 +38,12 @@ body {
     filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
 }
 
+.header{
+    font-size: 30px;
+    margin-bottom: 0;
+    color: #c38d9e;
+}
+
 .main{
     display: flex;
     justify-content: center;
