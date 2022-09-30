@@ -31,6 +31,7 @@ a:hover {
     display: inline-flex;
 }
 
+
 /** how to change img colour  
  * https: //codepen.io/sosuke/pen/Pjoqqp */
 .image img {
@@ -39,35 +40,57 @@ a:hover {
     filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
 }
 
-#section-a{
-    text-align: center;
-    margin: 50px;
-
+.header{
+    text-align: right;
+    margin-right: 300px;
+    color: #c38d9e;
+    
 }
+
+#top{
+    padding-top: 150px;
+    font-size: 50px;
+}
+
+.container{
+    margin-top: -42px;
+    height: 500px;
+    background-image: url('../images/table.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+
+
 
 #section-c{
     display: flex;
-    justify-content: center;
 }
 
 #box{
     max-width: 900px;
-    margin-top: 50px;
     margin-bottom: 100px;
     
     padding: 10px;
     display: grid;
     
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 30px;
-
-    background-color: #c38d9e;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 75px;
 }
 
 .link{
-    color: white;
+    color: black;
+    text-align: center;
+    height: 300px;
+    width: 220px;
+    border: #c38d9e solid 2px;
 }
+
+.link a{
+    color: #c38d9e;
+}
+
 
 
 /** Form */
