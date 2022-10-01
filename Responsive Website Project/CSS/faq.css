@@ -39,6 +39,51 @@ body {
     filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
 }
 
+#header h1{
+    font-size: 50px;
+    color: #c38d9e;
+}
+
+#header p{
+    font-size: 20px;
+}
+
+/** Accordian style https: //supfort.com/pure-css-accordion-without-javascript */
+input {
+    display: none;
+}
+
+label {
+    display: block;
+    padding: 10px 22px;
+    margin: 0 0 1px 0;
+    cursor: pointer;
+    background: white;
+    border-radius: 3px;
+    color: black;
+    transition: ease .5s;
+}
+
+label:hover {
+    background: #c38d9e;
+}
+
+.content {
+    background: #E2E5F6;
+    padding: 10px 25px;
+    border: 1px solid #A7A7A7;
+    margin: 0 0 1px 0;
+    border-radius: 3px;
+}
+
+input+label+.content {
+    display: none;
+}
+
+input:checked+label+.content {
+    display: block;
+}
+
 /** Form */
 #newsletter {
     display: flex;
@@ -70,6 +115,10 @@ body {
     padding-right: 20px;
     color: #ffffff;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.button:hover {
+    background-color: black;
 }
 
 /** Footer */
