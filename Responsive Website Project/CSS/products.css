@@ -54,7 +54,7 @@ body {
     margin-top: 50px;
     margin-bottom: 100px;
     
-    padding: 10px;
+    padding: 10px 20px 10px 10px;
     display: grid;
 
     grid-template-columns: repeat(2, 1fr);
@@ -72,6 +72,11 @@ body {
 
 .product-name{
     text-align: left;
+    font-weight: bolder;
+}
+
+.price{
+    color: #c38d9e;
 }
 
 
