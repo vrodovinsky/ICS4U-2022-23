@@ -6,12 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/products.css">
     <title>Tissues | Products</title>
+    <script>
+        function switchEl(id){
+            document.querySelector('#'+id).style.display = 'none';
+            document.querySelector('#'+id+'-alt').style.display = 'inline';
+        }
+
+        function switchBack(id) {
+                document.querySelector('#' + id).style.display = 'inline';
+                document.querySelector('#' + id + '-alt').style.display = 'none';
+            }
+    </script>
 </head>
 <body>
     <!--Navbar-->
     <div id="navbar">
         <header>
-            <div class="item image"><img class="image" src="./images/tissue-box.png"></div>
+            <div class="item image"><a href="index.html"><img class="image" src="./images/tissue-box.png"></a></div>
         </header>
     
         <navbar>
@@ -43,21 +54,23 @@
         <h1>Our Products</h1>
     </section>
 
-    <!--Product section-->
+    <!--Products-->
     <div class="main">
         <section class="products">
-        <div class="product">
-            <div id="cat-alternate"><img src="./images/cat.png"></div>
+        <div class="product" onmouseover="switchEl('cat');" onmouseout="switchBack('cat');">
+            <div><img id="cat" src="./images/cat.png"><img id="cat-alt" src="./images/cat-alternate.png"></div>
         </div>
-        <div class="product">
-            <div id="elephant-alternate"><img src="./images/elephant.png"></div>
+        <div class="product" onmouseover="switchEl('el');" onmouseout="switchBack('el');">
+            <div id="elephant"><img id="el" src="./images/elephant.png"><img id="el-alt" src="./images/elephant-alternate.png"></div>
         </div>
         <div class="product-name">Cat Tissue Cover <br> $20</div>
         <div class="product-name">Elephant Tissue Cover <br> $20</div>
-        <div class="product">
-            <div id="cat1-alternate"><img src="./images/cat1.png"></div>
+        <div class="product" onmouseover="switchEl('cat1');" onmouseout="switchBack('cat1');">
+            <div><img id="cat1" src="./images/cat1.png"><img id="cat1-alt" src="./images/cat1-alternate.png"></div>
         </div>
-        <div class="product"><img src="./images/panda.png"></div>
+        <div class="product" onmouseover="switchEl('panda');" onmouseout="switchBack('panda');">
+            <div id="panda"><img id="panda" src="./images/panda.png"><img id="panda-alt" src="./images/panda-alternate.png"></div>
+            </div>
         <div class="product-name">Orange Cat Tissue Cover <br> $20</div>
         <div class="product-name">Panda Tissue Cover <br>$20</div>
     </section></div>

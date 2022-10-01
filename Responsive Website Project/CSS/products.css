@@ -77,31 +77,6 @@ body {
 }
 
 
-#cat-alternate:hover {
-    background-image: url("../images/cat-alternate.png");
-    width: 400px;
-    height: auto;
-}
-
-#elephant-alternate:hover {
-    background-image: url("../images/elephant-alternate.png");
-    width: 400px;
-    height: auto;
-}
-
-#cat1-alternate:hover {
-    background-image: url("../images/cat1-alternate.png");
-    width: 400px;
-    height: auto;
-}
-
-#panda-alternate:hover {
-    background-image: url("../images/panda-alternate.png");
-    width: 400px;
-    height: auto;
-}
-
-
 /** Form */
 #newsletter {
     display: flex;

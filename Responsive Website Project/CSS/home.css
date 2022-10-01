@@ -66,6 +66,7 @@ a:hover {
 
 #section-c{
     display: flex;
+    justify-content: center;
 }
 
 #box{
@@ -76,7 +77,7 @@ a:hover {
     display: grid;
     
     grid-template-columns: repeat(4, 1fr);
-    gap: 75px;
+    gap: 30px;
 }
 
 .link{
