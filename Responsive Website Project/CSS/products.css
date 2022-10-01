@@ -64,13 +64,11 @@ body {
 }
 
 .product img{
-    width: 400px;
+    width: 100%;
     height: auto;
-}
-
-.product{
     border: #c38d9e solid 5px;
 }
+
 
 .product-name{
     text-align: left;
@@ -126,4 +124,10 @@ body {
 
 footer .grid {
     background-color: #e27d60;
+}
+
+@media (max-width: 600px) {
+    .products {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
