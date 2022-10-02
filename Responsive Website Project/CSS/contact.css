@@ -10,15 +10,6 @@ body {
     line-height: 1.5;
 }
 
-
-/** how to change img colour  
- * https: //codepen.io/sosuke/pen/Pjoqqp */
-.image img {
-    width: 50px;
-    margin-left: 10px;
-    filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
-}
-
 .faq-link{
     color: black;
     text-decoration: underline;
