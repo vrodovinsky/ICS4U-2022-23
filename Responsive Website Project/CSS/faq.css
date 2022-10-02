@@ -3,7 +3,6 @@ body {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.1em;
     line-height: 1.5;
-    text-align: center;
 }
 
 /** how to change img colour  
@@ -36,10 +35,12 @@ body {
 #header-page h1{
     font-size: 50px;
     color: #c38d9e;
+    text-align: center;
 }
 
 #header-page p{
     font-size: 20px;
+    text-align: center;
 }
 
 /** Accordian style https: //supfort.com/pure-css-accordion-without-javascript */
@@ -62,9 +63,7 @@ label {
 }
 
 .content {
-    background: #E2E5F6;
     padding: 10px 25px;
-    border: 1px solid #A7A7A7;
     margin: 0 0 1px 0;
     border-radius: 3px;
 }
