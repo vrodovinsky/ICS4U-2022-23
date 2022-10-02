@@ -7,7 +7,8 @@
 /* Logo */
 .logo img {
     width: 50px;
-    margin-left: 10px;
+    margin: 10px;
+    
 }
 
 /* Nav menu */
@@ -26,6 +27,7 @@
 .menu a {
     display: block;
     padding-right: 30px;
+    padding-top: 5px;
     color: white;
     text-decoration: none;
 }
