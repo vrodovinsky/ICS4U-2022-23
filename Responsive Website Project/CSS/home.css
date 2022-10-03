@@ -46,7 +46,6 @@ body{
 
 
 .box{
-    max-width: 900px;
     margin-top: 20px;
     margin-bottom: 100px;
     
@@ -63,8 +62,6 @@ body{
     text-align: left;
     width: 100%;
     height: auto;
-    margin-right: 75px;
-    margin-left: 75px;
     border: #e27d60 solid 2px;
 }
 
@@ -73,10 +70,7 @@ body{
 }
 
 .stars{
-    display: flex;
-    justify-content: right;
-    margin-top: -45px;
-    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .review p{
@@ -119,20 +113,21 @@ body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-/** Responsiveness */
+/** Responsiveness 
 
 @media (max-width: 768px){
     .container{
-        display: none;
+        background-image: none;
         background-color: #c38d9e;
     }
 
-    
-    
-    .box{
+    #showcase{
+        color: white;
+    }
+
+    .box {
         grid-template-columns: repeat(1, 1fr);
     }
-    
     #newsletter{
         display: block;
         text-align: center;
@@ -144,3 +139,48 @@ body{
         margin-top: 10px;
     }
 }
+
+@media (max-width: 1000px) {
+    .box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} */
+
+@media (max-width: 1100px){
+    .box {
+            grid-template-columns: repeat(2, 1fr);
+        }
+}
+
+@media (max-width: 768px) {
+    .box {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .container {
+        background-image: none;
+        background-color: #c38d9e;
+    }
+    
+    #showcase {
+        color: white;
+    }
+    
+    .box {
+        grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 20px;
+    }
+    
+    #newsletter {
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+    
+    #newsletter button {
+        margin-top: 10px;
+    }
+}
+
+
