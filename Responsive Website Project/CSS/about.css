@@ -65,6 +65,33 @@ body {
     text-align: right;
 }
 
+/** Responsiveness */
+
+@media (max-width: 768px){
+    .box-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .box-img{
+        display: none;
+    }
+
+    .box-left, .box-right{
+        text-align: center;
+    }
+
+
+    #header-page{
+        font-size: 45px;
+        color: white;
+    }
+
+    #container{
+        background-image: none;
+        background-color: #c38d9e;
+    }
+}
+
 
 
 

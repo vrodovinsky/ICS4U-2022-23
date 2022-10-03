@@ -56,7 +56,7 @@ body {
 
 
 /** Responsiveness */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .products {
         grid-template-columns: repeat(1, 1fr);
     }

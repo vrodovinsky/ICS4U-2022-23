@@ -22,15 +22,13 @@ body {
 #header-page{
     text-align:center;
     font-size: 35px;
-    margin-left: 50px;
     color: #c38d9e;
     text-align: center;
 }
 
 #section-b{
     text-align: center;
-    margin-left: 50px;
-    margin-top: 0;
+    margin: 5px;
 }
 
 #section-b h4{
@@ -52,13 +50,14 @@ body {
 
 .main{
     display: flex;
-    justify-content: center;
-   
+    justify-content: center; 
 }
 
-.container {
+.form {
+    width: 100%;
+    max-width: 900px;
     margin-bottom: 100px;
-    padding: 10px;
+    padding: 20px;
     display: grid;
 
     grid-template-columns: repeat(2, 1fr);
@@ -66,6 +65,7 @@ body {
     gap: 10px;
 
 }
+
 
 .item:nth-of-type(3){
     grid-column: 1/3;
@@ -79,35 +79,30 @@ body {
 }
 
 
-.input-box, textarea{
+.input-box{
    border: 1px solid #c38d9e;
-   width: 500px;
+   width: 100%;
    height: 30px;
 }
 
-#name label, #email label, #message label{
+.message-box{
+    border: 1px solid #c38d9e;
+    width: 100%;
+    height: 100px;
+}
+
+#first-name label, #last-name label, #email label, #message label{
     display: flex;
     justify-content: left;
     color: #c38d9e;
     font-weight: bold;
 }
 
-::placeholder{
-    opacity: 60%;
-}
 
-#name input, #last-name input, #email input, #message textarea{
+
+#first-name input, #last-name input, #email input, #message textarea{
     display: flex;
     justify-content: left;
-}
-
-
-#email-box{
-    width: 1015px;
-}
-#message-box{
-    height: 100px;
-    width: 1015px;
 }
 
 
@@ -132,3 +127,24 @@ body {
     background-color: black;
 }
 
+/** Responsiveness */
+@media (max-width: 768px){
+
+.form{
+    grid-template-columns: 1fr;
+}
+    .item:nth-of-type(2){
+        grid-row: 2/3;
+    }
+    .item:nth-of-type(3) {
+        grid-column: 1;
+    }
+    
+    .item:nth-of-type(4) {
+        grid-column: 1;
+    }
+    
+    .item:nth-of-type(5) {
+        grid-column: 1;
+    }
+}

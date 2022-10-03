@@ -5,6 +5,19 @@ body {
     line-height: 1.5;
 }
 
+#header-page{
+    margin: 20px;
+    text-align: center;
+}
+#header-page h1 {
+    font-size: 50px;
+    color: #c38d9e;
+}
+
+#header-page p {
+    font-size: 20px;
+}
+
 .faqs{
     width: 66%;
     margin: auto;
@@ -22,17 +35,6 @@ body {
 .question{
     text-align: left;
     border: #c38d9e solid 5px;
-}
-
-#header-page h1{
-    font-size: 50px;
-    color: #c38d9e;
-    text-align: center;
-}
-
-#header-page p{
-    font-size: 20px;
-    text-align: center;
 }
 
 /** Accordian style https: //supfort.com/pure-css-accordion-without-javascript */
