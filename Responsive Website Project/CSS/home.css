@@ -11,12 +11,13 @@ body{
 }
 
 
-.showcase{
-    text-align: right;
-    margin-right: 300px;
+
+#showcase{
     color: #c38d9e;
+    text-align: center;
     
 }
+
 
 #top{
     padding-top: 150px;
@@ -38,9 +39,13 @@ body{
     text-align: center;
 }
 
+#section-b h1{
+    color: #c38d9e;
+}
 
 
-#box{
+
+.box{
     max-width: 900px;
     margin-top: 20px;
     margin-bottom: 100px;
@@ -56,17 +61,26 @@ body{
 .review{
     color: black;
     text-align: left;
-    height: 300px;
-    width: 300px;
+    width: 100%;
+    height: auto;
+    margin-right: 75px;
+    margin-left: 75px;
     border: #e27d60 solid 2px;
 }
 
 .review h3{
-    margin-left: 20px;
+    margin-left: 10px;
 }
+
+.stars{
+    display: flex;
+    justify-content: right;
+    margin-top: -45px;
+    margin-right: 10px;
+}
+
 .review p{
     margin: 20px;
-    font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
 }
 
@@ -108,6 +122,17 @@ body{
 /** Responsiveness */
 
 @media (max-width: 768px){
+    .container{
+        display: none;
+        background-color: #c38d9e;
+    }
+
+    
+    
+    .box{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
     #newsletter{
         display: block;
         text-align: center;
