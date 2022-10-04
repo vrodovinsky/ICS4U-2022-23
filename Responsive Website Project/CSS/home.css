@@ -11,7 +11,7 @@ body{
 }
 
 
-
+/** Header */
 #showcase{
     color: #c38d9e;
     text-align: center;
@@ -33,7 +33,7 @@ body{
     background-size: cover;
 }
 
-
+/** Filler Text */
 
 #filler{
     text-align: center;
@@ -48,7 +48,7 @@ body{
 }
 
 
-
+/** Testimonials */
 .box{
     margin-top: 20px;
     margin-bottom: 100px;

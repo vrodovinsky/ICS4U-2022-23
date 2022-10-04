@@ -5,6 +5,7 @@ body {
     line-height: 1.5;
 }
 
+/** Page header */
 #header-page{
     margin: 20px;
     text-align: center;
@@ -19,6 +20,7 @@ body {
     margin: 20px;
 }
 
+/** FAQ */
 .faqs{
     width: 66%;
     margin: auto;
