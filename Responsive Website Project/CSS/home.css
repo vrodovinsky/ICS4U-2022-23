@@ -13,7 +13,7 @@ body{
 
 /** Header */
 #showcase{
-    color: #c38d9e;
+    color: white;
     text-align: center;
     
 }
@@ -27,7 +27,7 @@ body{
 .container{
     margin-top: -42px;
     height: 500px;
-    background-image: url('../images/table.jpeg');
+    background-image: url('../images/paper.png');
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
@@ -127,15 +127,6 @@ body{
 @media (max-width: 768px) {
     .box {
         grid-template-columns: repeat(1, 1fr);
-    }
-
-    .container {
-        background-image: none;
-        background-color: #c38d9e;
-    }
-    
-    #showcase {
-        color: white;
     }
     
     .box {
