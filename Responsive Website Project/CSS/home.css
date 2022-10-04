@@ -35,15 +35,15 @@ body{
 
 
 
-#section-b{
+#filler{
     text-align: center;
 }
 
-#section-b h1{
+#filler h1{
     color: #c38d9e;
 }
 
-#section-b p{
+#filler p{
     margin: 20px;
 }
 
@@ -97,8 +97,6 @@ body{
     color: #c38d9e;
 }
 
-
-
 #newsletter input[type="email"] {
     padding: 4px;
     height: 25px;
@@ -117,38 +115,7 @@ body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-/** Responsiveness 
-
-@media (max-width: 768px){
-    .container{
-        background-image: none;
-        background-color: #c38d9e;
-    }
-
-    #showcase{
-        color: white;
-    }
-
-    .box {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    #newsletter{
-        display: block;
-        text-align: center;
-        margin-bottom: 10px;
-        margin-left: 10px;
-    }
-
-    #newsletter button{
-        margin-top: 10px;
-    }
-}
-
-@media (max-width: 1000px) {
-    .box {
-        grid-template-columns: repeat(2, 1fr);
-    }
-} */
+/** Responsiveness */
 
 @media (max-width: 1100px){
     .box {
