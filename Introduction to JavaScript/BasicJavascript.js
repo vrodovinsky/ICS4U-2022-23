@@ -84,8 +84,8 @@ var greeting = 'Hello';
 //     console.log(`${prop}: ${car[prop]} `);
 // }
 
-console.log(car.make);
-console.log(car['make']);
+// console.log(car.make);
+// console.log(car['make']);
 
 console.log('HI');
 
