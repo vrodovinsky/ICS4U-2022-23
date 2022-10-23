@@ -22,17 +22,12 @@ function mystery(x) {
    return 42;
 }
 
-// function mystery2(callback) {
-//    let result = callback() + 5;
-//    console.log(result);
-// }
-
 function mystery2(callback) {
    let result = callback() + 5;
    console.log(result);
 }
 
-// mystery2(mystery);
+mystery2(mystery);
 
 
 const companies = [
@@ -50,7 +45,7 @@ const companies = [
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
 // forEach
-companies.forEach((val) => { console.log(val.name)});        // no () required if 1 arg
+companies.forEach((val) => {console.log(val.name)});        // no () required if 1 arg
 companies.forEach((val, i) => {console.log(`${i}:${val.name}`)});
 
 // filter
