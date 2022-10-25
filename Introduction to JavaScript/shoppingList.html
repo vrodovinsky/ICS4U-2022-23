@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Shopping List</title>
+    <style>
+        li {
+            margin: 10px;
+        }
+        li button{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>Enter a new item: <input id = "form" type="text"><button>Add Item</button></p>
+    </section>
+    <ul id ="shopping list"></ul>
+</body>
+<script>
+
+document.querySelector('section button').onclick = () =>{
+    const item = document.getElementById("form").value;
+    item.id = 'value';
+    document.getElementById("form").value = "";
+    document.getElementById("form").focus();
+
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+    const button = document.createElement('button');
+    button.addEventListener('click', deleteLine);
+    span.innerHTML = item;
+    button.innerHTML = 'Delete';
+    li.appendChild(span);
+    li.appendChild(button);
+    document.querySelector('ul').appendChild(li);
+    
+}
+
+function deleteLine(e){
+    this.parentElement.remove();
+}
+
+</script>
+</html>
