@@ -66,3 +66,29 @@ console.log(year);
 const length = companies.filter((length) => length.end - length.start >= 10);
 console.log(length);
 
+// map
+
+// Create array of company names
+const companyNames = companies.map(company => company.name);
+console.log(companyNames);
+
+//Create array of ages squared
+const square = ages.map(age => age * age);
+console.log(square);
+// sort
+
+const sortedCompanies = companies.sort((a, b) => (a.start > b.start ? 1 : -1 )); 
+console.log(sortedCompanies);
+
+//Sort ages
+const sortAges = ages.sort((a, b) => a > b ? 1 : -1);
+console.log(sortAges);
+
+//reduce
+const ageSum = ages.reduce((total, age) => total + age, 0);
+console.log(ageSum);
+
+//Get total years for all companies
+const totalYears = companies.reduce((total, company) => total + (company.end - company.start), 0);
+console.log(totalYears);
+
