@@ -58,13 +58,13 @@
         numRow.forEach((num) => {
             const buttonElement = document.createElement('button')
             buttonElement.textContent = num
-            buttonElement.setAttribute('id', 'key')
+            buttonElement.setAttribute('id', 'key-' + num)
             buttonElement.classList.add('key')
             buttonElement.addEventListener('click', () => handleClick(num))
             if (num === 0 || num === 'CLS')
-            buttonElement.classList.add('wide-button-1')
+                buttonElement.classList.add('wide-button-1')
             if (num === '=')
-            buttonElement.classList.add('wide-button-2')
+                buttonElement.classList.add('wide-button-2')
             calculator.append(buttonElement)
         })
    })
@@ -75,15 +75,17 @@
    calculator.append(result)
 
    const handleClick = (number => {
-    console.log('clicked');
     if (number === "CLS"){
         result.textContent = ""
-    }else {
+    }else if(number === "="){
+        result.textContent = solve(result.textContent)
+    } else{
         addNum(number)
     }
+   })
 
-    
-   
+   const solve = (exp => {
+        return eval(exp)
    })
 
    const addNum = (element) => {
