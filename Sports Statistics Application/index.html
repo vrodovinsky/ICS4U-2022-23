@@ -4,9 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- add table with headers, rest is done in javascript-->
+    <div>
+        <table id="Estandings" class="table is-striped">
+            <thead>
+                <th>Eastern Conference</th>
+                <tr>
+                    <th onclick="createTable(sort('name'));">Name</th>
+                    <th onclick="createTable(sort('W'));">Wins</th>
+                    <th onclick="createTable(sort('L'));">Losses</th>
+                    <th onclick="createTable(sort('PCT'));">PCT</th>
+                    <th>Home</th>
+                    <th>Road</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div>
+        <table id="Wstandings" class="table is-striped">
+            <thead>
+                <th>Western Conference</th>
+                <tr>
+                    <th onclick="sort('name');">Name</th>
+                    <th onclick="sort('W')">Wins</th>
+                    <th onclick="sort('L')">Losses</th>
+                    <th onclick="sort('PCT');">PCT</th>
+                    <th>Home</th>
+                    <th>Road</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div>
+        <form>
+            <label>Team 1</label>
+            <input type="text" id="team1">
+            <label>Team 2</label>
+            <input type="text" id="team2">
+            <label>Score 1</label>
+            <input type="number" id="score1">
+            <label>Score 2</label>
+            <input type="number" id="score2">
+            <button onclick="store()">Submit</button>
+        </form>
+    </div>
 </body>
+<script src="script.js"></script>
 </html>
