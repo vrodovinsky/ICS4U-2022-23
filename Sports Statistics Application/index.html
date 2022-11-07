@@ -14,10 +14,11 @@
             <thead>
                 <th>Eastern Conference</th>
                 <tr>
-                    <th onclick="createTable(sort('name'));">Name</th>
-                    <th onclick="createTable(sort('W'));">Wins</th>
-                    <th onclick="createTable(sort('L'));">Losses</th>
-                    <th onclick="createTable(sort('PCT'));">PCT</th>
+                    <th onclick="createTable(sort('rank'), 'Eastern');">Rank</th>
+                    <th onclick="createTable(sort('name'), 'Eastern');">Name</th>
+                    <th onclick="createTable(sort('W'), 'Eastern');">Wins</th>
+                    <th onclick="createTable(sort('L'), 'Eastern');">Losses</th>
+                    <th onclick="createTable(sort('PCT'), 'Eastern')">PCT</th>
                     <th>Home</th>
                     <th>Road</th>
                 </tr>
@@ -30,10 +31,11 @@
             <thead>
                 <th>Western Conference</th>
                 <tr>
-                    <th onclick="sort('name');">Name</th>
-                    <th onclick="sort('W')">Wins</th>
-                    <th onclick="sort('L')">Losses</th>
-                    <th onclick="sort('PCT');">PCT</th>
+                    <th onclick="createTable(sort('rank'), 'Western');">Rank</th>
+                    <th onclick="createTable(sort('name'), 'Western');">Name</th>
+                    <th onclick="createTable(sort('W'), 'Western');">Wins</th>
+                    <th onclick="createTable(sort('L'), 'Western');">Losses</th>
+                    <th onclick="createTable(sort('PCT'),'Western')">PCT</th>
                     <th>Home</th>
                     <th>Road</th>
                 </tr>
@@ -55,5 +57,6 @@
         </form>
     </div>
 </body>
+<script src="teams.js"></script>
 <script src="script.js"></script>
 </html>
