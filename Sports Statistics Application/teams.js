@@ -598,6 +598,48 @@ team["games"] = [
     opp: "San Antonio Spurs",
     score: [129, 102],
   },
+  {
+    home: true,
+    date: "10-21-22",
+    opp: "New Orleans Pelicans",
+    score: [112, 124],
+  },
+  {
+    home: false,
+    date: "10-23-22",
+    opp: "Atlanta Hawks",
+    score: [126, 109],
+  },
+  {
+    home: false,
+    date: "10-26-22",
+    opp: "New York Knicks",
+    score: [131, 134],
+  },
+  {
+    home: false,
+    date: "10-28-22",
+    opp: "Orlando Magic",
+    score: [93, 113],
+  },
+  {
+    home: true,
+    date: "10-29-22",
+    opp: "Golden State Warriors",
+    score: [120, 113],
+  },
+  {
+    home: true,
+    date: "10-31-22",
+    opp: "Sacramento Kings",
+    score: [108, 115],
+  },
+  {
+    home: false,
+    date: "11-02-22",
+    opp: "Chicago Bulls",
+    score: [88, 106],
+  },
 ];
 teams.push(team);
 
@@ -610,10 +652,46 @@ team["L"] = 1;
 team["PCT"] = 0;
 team["games"] = [
   {
+    home: false,
+    date: "10-19-22",
+    opp: "Toronto Raptors",
+    score: [105, 108],
+  },
+  {
+    home: false,
+    date: "10-22-22",
+    opp: "Chicago Bulls",
+    score: [128, 96],
+  },
+  {
     home: true,
-    date: "",
-    opp: 0,
-    score: [0, 0],
+    date: "10-23-22",
+    opp: "Washington Wizards",
+    score: [117, 107],
+  },
+  {
+    home: true,
+    date: "10-26-22",
+    opp: "Orlando Magic",
+    score: [105, 92],
+  },
+  {
+    home: false,
+    date: "10-28-22",
+    opp: "Boston Celtics",
+    score: [132, 123],
+  },
+  {
+    home: false,
+    date: "10-30-22",
+    opp: "New York Knicks",
+    score: [121, 108],
+  },
+  {
+    home: true,
+    date: "11-02-22",
+    opp: "Boston Celtics",
+    score: [114, 113],
   },
 ];
 teams.push(team);

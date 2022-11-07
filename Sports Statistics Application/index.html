@@ -1,62 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <title>Standings | NBA</title>
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="">
+          <img src="./nbaLogo.png" height="500" width="100" />
+        </a>
+
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item"> Standings </a>
+
+          <a class="navbar-item"> Teams </a>
+
+          <a class="navbar-item"> Games </a>
+
+          <a class="navbar-item">
+            Admin
+            <!--input games-->
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> Teams </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item"> Atlanta Hawks </a>
+              <a class="navbar-item"> Boston Celtics </a>
+              <a class="navbar-item"> Chicago Bulls </a>
+              <a class="navbar-item"> Charlotte Hornets </a>
+              <a class="navbar-item"> Brooklyn Nets </a>
+              <a class="navbar-item"> Cleveland Cavaliers </a>
+              <a class="navbar-item"> Maimi Heat </a>
+              <a class="navbar-item"> New York Knicks </a>
+              <a class="navbar-item"> Detriot Pistons </a>
+              <a class="navbar-item"> Orlando Magic </a>
+              <a class="navbar-item"> Philadelphia 76ers </a>
+              <a class="navbar-item"> Indiana Pacers </a>
+              <a class="navbar-item"> Washington Wizards </a>
+              <a class="navbar-item"> Toronto Raptors </a>
+              <a class="navbar-item"> Milwaukee Bucks </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <!-- add table with headers, rest is done in javascript-->
-    <div>
-        <table id="Estandings" class="table is-striped">
-            <thead>
-                <th>Eastern Conference</th>
-                <tr>
-                    <th onclick="createTable(sort('rank'), 'Eastern');">Rank</th>
-                    <th onclick="createTable(sort('name'), 'Eastern');">Name</th>
-                    <th onclick="createTable(sort('W'), 'Eastern');">Wins</th>
-                    <th onclick="createTable(sort('L'), 'Eastern');">Losses</th>
-                    <th onclick="createTable(sort('PCT'), 'Eastern')">PCT</th>
-                    <th>Home</th>
-                    <th>Road</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+    <div class="container mt-4">
+      <table id="Estandings" class="table is-striped is-hoverable is-fullwidth">
+        <thead>
+          <th class="has-background-link has-text-white">Eastern Conference</th>
+          <th class="has-background-link has-text-white"></th>
+          <th class="has-background-link has-text-white"></th>
+          <th class="has-background-link has-text-white"></th>
+          <th class="has-background-link has-text-white"></th>
+          <th class="has-background-link has-text-white"></th>
+          <th class="has-background-link has-text-white"></th>
+          <tr>
+            <th onclick="createTable(sort('rank'), 'Eastern');">Rank</th>
+            <th onclick="createTable(sort('name'), 'Eastern');">Name</th>
+            <th onclick="createTable(sort('W'), 'Eastern');">Wins</th>
+            <th onclick="createTable(sort('L'), 'Eastern');">Losses</th>
+            <th onclick="createTable(sort('PCT'), 'Eastern')">PCT</th>
+            <th>Home</th>
+            <th>Road</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
-    <div>
-        <table id="Wstandings" class="table is-striped">
-            <thead>
-                <th>Western Conference</th>
-                <tr>
-                    <th onclick="createTable(sort('rank'), 'Western');">Rank</th>
-                    <th onclick="createTable(sort('name'), 'Western');">Name</th>
-                    <th onclick="createTable(sort('W'), 'Western');">Wins</th>
-                    <th onclick="createTable(sort('L'), 'Western');">Losses</th>
-                    <th onclick="createTable(sort('PCT'),'Western')">PCT</th>
-                    <th>Home</th>
-                    <th>Road</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+    <div class="container mt-4">
+      <table id="Wstandings" class="table is-striped is-hoverable is-fullwidth">
+        <thead>
+          <th class="has-background-link has-text-white">Western Conference</th>
+          <th class="has-background-link has-text-white"></th>
+          <th class="has-background-link has-text-white"></th>
+          <th class="has-background-link has-text-white"></th>
+          <th class="has-background-link has-text-white"></th>
+          <th class="has-background-link has-text-white"></th>
+          <th class="has-background-link has-text-white"></th>
+
+          <tr>
+            <th onclick="createTable(sort('rank'), 'Western');">Rank</th>
+            <th onclick="createTable(sort('name'), 'Western');">Name</th>
+            <th onclick="createTable(sort('W'), 'Western');">Wins</th>
+            <th onclick="createTable(sort('L'), 'Western');">Losses</th>
+            <th onclick="createTable(sort('PCT'),'Western')">PCT</th>
+            <th>Home</th>
+            <th>Road</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
-    <div>
-        <form>
-            <label>Team 1</label>
-            <input type="text" id="team1">
-            <label>Team 2</label>
-            <input type="text" id="team2">
-            <label>Score 1</label>
-            <input type="number" id="score1">
-            <label>Score 2</label>
-            <input type="number" id="score2">
-            <button onclick="store()">Submit</button>
-        </form>
-    </div>
-</body>
-<script src="teams.js"></script>
-<script src="script.js"></script>
+  </body>
+  <script src="teams.js"></script>
+  <script src="script.js"></script>
 </html>
