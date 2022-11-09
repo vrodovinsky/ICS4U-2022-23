@@ -6,5 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Teams | NBA</title>
   </head>
-  <body></body>
+  <body onload="start()">
+    <div id="test"></div>
+  </body>
+  <script>
+    function start() {
+      const dataString = localStorage.getItem("teams");
+      const teams = JSON.parse(dataString);
+      let params = new URL(document.location).searchParams;
+
+      const team = teams.filter((team) => team.Id == params.get("id"));
+
+      document.querySelector("#test").textContent = team[0].Name;
+    }
+  </script>
 </html>
