@@ -788,6 +788,12 @@ team["games"] = [
   },
   {
     home: true,
+    date: "10-20-22",
+    opp: "Milwaukee Bucks",
+    score: [88, 90],
+  },
+  {
+    home: true,
     date: "10-22-22",
     opp: "San Antonio Spurs",
     score: [105, 114],
@@ -812,9 +818,21 @@ team["games"] = [
   },
   {
     home: false,
-    date: "10-19-22",
-    opp: "Detriot Pistons",
-    score: [109, 113],
+    date: "10-29-22",
+    opp: "Chicago Bulls",
+    score: [114, 109],
+  },
+  {
+    home: false,
+    date: "10-31-22",
+    opp: "Washington Wizards",
+    score: [118, 111],
+  },
+  {
+    home: true,
+    date: "11-02-22",
+    opp: "Washington Wizards",
+    score: [111, 121],
   },
 ];
 teams.push(team);
@@ -829,9 +847,51 @@ team["PCT"] = 0;
 team["games"] = [
   {
     home: true,
-    date: "",
-    opp: 0,
-    score: [0, 0],
+    date: "10-19-22",
+    opp: "Washington Wizards",
+    score: [107, 114],
+  },
+  {
+    home: true,
+    date: "10-21-22",
+    opp: "San Antonio Spurs",
+    score: [134, 137],
+  },
+  {
+    home: true,
+    date: "10-22-22",
+    opp: "Detriot Pistons",
+    score: [124, 115],
+  },
+  {
+    home: false,
+    date: "10-24-22",
+    opp: "Philadelphia 76ers",
+    score: [106, 120],
+  },
+  {
+    home: false,
+    date: "10-26-22",
+    opp: "Chicago Bulls",
+    score: [109, 124],
+  },
+  {
+    home: false,
+    date: "10-28-22",
+    opp: "Washington Wizards",
+    score: [127, 117],
+  },
+  {
+    home: false,
+    date: "10-29-22",
+    opp: "Brooklyn Nets",
+    score: [125, 116],
+  },
+  {
+    home: false,
+    date: "10-31-22",
+    opp: "Brooklyn Nets",
+    score: [109, 116],
   },
 ];
 teams.push(team);
@@ -845,10 +905,52 @@ team["L"] = 4;
 team["PCT"] = 0;
 team["games"] = [
   {
+    home: false,
+    date: "10-19-22",
+    opp: "Indiana Pacers",
+    score: [114, 107],
+  },
+  {
     home: true,
-    date: "",
-    opp: 0,
-    score: [0, 0],
+    date: "10-21-22",
+    opp: "Chicago Bulls",
+    score: [102, 100],
+  },
+  {
+    home: false,
+    date: "10-23-22",
+    opp: "Cleveland Cavaliers",
+    score: [107, 117],
+  },
+  {
+    home: true,
+    date: "10-25-22",
+    opp: "Detriot Pistons",
+    score: [120, 99],
+  },
+  {
+    home: true,
+    date: "10-28-22",
+    opp: "Indiana Pacers",
+    score: [117, 127],
+  },
+  {
+    home: false,
+    date: "10-30-22",
+    opp: "Boston Celtics",
+    score: [94, 112],
+  },
+  {
+    home: true,
+    date: "10-31-22",
+    opp: "Philadelphia 76ers",
+    score: [111, 118],
+  },
+  {
+    home: false,
+    date: "11-02-22",
+    opp: "Philadelphia 76ers",
+    score: [121, 111],
   },
 ];
 teams.push(team);

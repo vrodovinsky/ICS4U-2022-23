@@ -8,9 +8,14 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Standings | NBA</title>
   </head>
-  <body>
+  <body onload="navbarStart()">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="">
@@ -44,21 +49,28 @@
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link"> Teams </a>
             <div class="navbar-dropdown">
-              <a class="navbar-item"> Atlanta Hawks </a>
-              <a class="navbar-item"> Boston Celtics </a>
-              <a class="navbar-item"> Chicago Bulls </a>
-              <a class="navbar-item"> Charlotte Hornets </a>
-              <a class="navbar-item"> Brooklyn Nets </a>
-              <a class="navbar-item"> Cleveland Cavaliers </a>
-              <a class="navbar-item"> Maimi Heat </a>
-              <a class="navbar-item"> New York Knicks </a>
-              <a class="navbar-item"> Detriot Pistons </a>
-              <a class="navbar-item"> Orlando Magic </a>
-              <a class="navbar-item"> Philadelphia 76ers </a>
-              <a class="navbar-item"> Indiana Pacers </a>
-              <a class="navbar-item"> Washington Wizards </a>
-              <a class="navbar-item"> Toronto Raptors </a>
-              <a class="navbar-item"> Milwaukee Bucks </a>
+              <div class="nested dropdown">
+                <a class="navbar-item">
+                  <span class="icon-text">
+                    <span>Eastern Conference</span>
+                    <span class="icon">
+                      <i class="fas fa-chevron-right"></i>
+                    </span>
+                  </span>
+                </a>
+                <div class="dropdown-menu" id="eastern-menu" role="menu"></div>
+              </div>
+              <div class="nested dropdown">
+                <a class="navbar-item">
+                  <span class="icon-text">
+                    <span>Western Conference</span>
+                    <span class="icon">
+                      <i class="fas fa-chevron-right"></i>
+                    </span>
+                  </span>
+                </a>
+                <div class="dropdown-menu" id="western-menu" role="menu"></div>
+              </div>
             </div>
           </div>
         </div>

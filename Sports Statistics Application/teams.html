@@ -8,6 +8,8 @@
   </head>
   <body onload="start()">
     <div id="test"></div>
+    <!-- Header with team name, summary of statistics (win, loses, PCT) -->
+    <!-- Panel of games -->
   </body>
   <script>
     function start() {
@@ -15,9 +17,9 @@
       const teams = JSON.parse(dataString);
       let params = new URL(document.location).searchParams;
 
-      const team = teams.filter((team) => team.Id == params.get("id"));
+      const team = teams.filter((team) => team.id == params.get("id"));
 
-      document.querySelector("#test").textContent = team[0].Name;
+      document.querySelector("#test").textContent = team[0].name;
     }
   </script>
 </html>

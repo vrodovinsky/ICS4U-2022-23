@@ -48,7 +48,10 @@ function createTable(teams, conference) {
     coll.textContent = team.rank;
     row.appendChild(coll);
     coll = document.createElement("td");
-    coll.textContent = team.name;
+    link = document.createElement("a");
+    link.textContent = team.name;
+    link.href = "./teams.html?id=" + team.id;
+    coll.appendChild(link);
     row.appendChild(coll);
     coll = document.createElement("td");
     coll.textContent = team.W;
@@ -133,3 +136,64 @@ function sort(field, conference) {
 
 createTable(teams, "Eastern");
 createTable(teams, "Western");
+
+function chooseConference(dropdownId) {
+  let dropdown = document.getElementById(dropdownId);
+
+  while (dropdown.firstChild) {
+    dropdown.removeChild(dropdown.firstChild);
+  }
+
+  let v = document.getElementsByName("conference");
+  let conf = "";
+
+  for (let i = 0; i < v.length; i++) {
+    if (v[i].checked) conf = v[i].id;
+  }
+
+  let teams = localStorage.getItem("teams");
+
+  teams = JSON.parse(teams);
+
+  const confTeams = teams.filter((c) => c.conference == conf);
+
+  confTeams.forEach((team) => {
+    let o = document.createElement("option");
+    o.textContent = team.name;
+    o.value = team.id;
+    dropdown.appendChild(o);
+  });
+}
+
+function navbarStart() {
+  let teams = localStorage.getItem("teams");
+  teams = JSON.parse(teams);
+
+  let Enavbar = document.getElementById("eastern-menu");
+
+  const Eteam = teams.filter((team) => team.conference === "Eastern");
+
+  Eteam.forEach((team) => {
+    let item = document.createElement("div");
+    item.classList.add("dropdown-content");
+    let link = document.createElement("a");
+    link.textContent = team.name;
+    link.href = "./teams.html?id=" + team.id;
+    item.appendChild(link);
+    Enavbar.appendChild(item);
+  });
+
+  let Wnavbar = document.getElementById("western-menu");
+
+  const Wteam = teams.filter((team) => team.conference == "Western");
+
+  Wteam.forEach((team) => {
+    let item = document.createElement("div");
+    item.classList.add("dropdown-content");
+    let link = document.createElement("a");
+    link.textContent = team.name;
+    link.href = "./teams.html?id=" + team.id;
+    item.appendChild(link);
+    Wnavbar.appendChild(item);
+  });
+}

@@ -67,14 +67,13 @@
     <div>
       <form>
         <label>Home Team</label>
-
         <div>
           <input
             type="radio"
             id="Eastern"
             name="conference"
             value="Econference"
-            onclick="getValue()"
+            onclick="chooseConference('homeTeam')"
           />
           <label for="Eastern">Eastern Conference</label><br />
           <input
@@ -82,57 +81,41 @@
             id="Western"
             name="conference"
             value="Wconference"
+            onclick="chooseConference('homeTeam')"
           />
           <label for="Western">Western Conference</label><br />
         </div>
-
-        <div class="select" id="values">
-          <!-- <select>
-            <option>Team Name</option>
-            <option>Atlanta Hawks</option>
-            <option>Boston Celtics</option>
-            <option>Chicago Bulls</option>
-            <option>Charlotte Hornets</option>
-            <option>Brooklyn Nets</option>
-            <option>Cleveland Cavaliers</option>
-            <option>Maimi Heat</option>
-            <option>New York Knicks</option>
-            <option>Detriot Pistons</option>
-            <option>Orlando Magic</option>
-            <option>Philadelphia 76ers</option>
-            <option>Indiana Pacers</option>
-            <option>Washington Wizards</option>
-            <option>Toronto Raptors</option>
-            <option>Milwaukee Bucks</option>
-            <option>Dallas Mavericks</option>
-            <option>Denver Nuggets</option>
-            <option>Golden State Warriors</option>
-            <option>Houston Rockets</option>
-            <option>Minnesota Timberwolves</option>
-            <option>LA Clippers</option>
-            <option>Memphis Grizzlies</option>
-            <option>Oklahoma City Thunder</option>
-            <option>Los Angeles Lakers</option>
-            <option>New Orleans Pelicans</option>
-            <option>Portland Trail Blazers</option>
-            <option>Phoenix Suns</option>
-            <option>San Antonio Spurs</option>
-            <option>Utah Jazz</option>
-            <option>Sacramento Kings</option>
-          </select> -->
+        <div class="select" id="HTeam">
+          <select id="homeTeam"></select>
         </div>
         <div>
           <label>Home Team Score</label>
           <input type="number" id="score1" />
         </div>
+
+        <label>Away Team</label>
         <div>
-          <label>Away Team</label>
-          <div class="select">
-            <select>
-              <option>Team Name</option>
-            </select>
-          </div>
+          <input
+            type="radio"
+            id="Eastern"
+            name="conference"
+            value="Econference"
+            onclick="chooseConference('awayTeam')"
+          />
+          <label for="Eastern">Eastern Conference</label><br />
+          <input
+            type="radio"
+            id="Western"
+            name="conference"
+            value="Wconference"
+            onclick="chooseConference('awayTeam')"
+          />
+          <label for="Western">Western Conference</label><br />
         </div>
+        <div class="select" id="ATeam">
+          <select id="awayTeam"></select>
+        </div>
+
         <div>
           <label>Away Team Score</label>
           <input type="number" id="score2" />
@@ -143,32 +126,6 @@
     </div>
   </body>
 
-  <script>
-    function getValue() {
-      let v = document.getElementsByName("conference");
-      let conf = "";
-
-      for (let i = 0; i < v.length; i++) {
-        if (v[i].checked) conf = v[i].id;
-      }
-
-      let teams = localStorage.getItem("teams");
-
-      teams = JSON.parse(teams);
-
-      const checkedConf = teams.filter((c) => c.conference == conf);
-      console.log(checkedConf);
-
-      const value = document.createElement("select");
-      let team = document.createElement("option");
-      checkedConf.forEach((name) => {
-        team = document.createElement("option");
-        team.textContent = team.name;
-        value.appendChild(team);
-      });
-
-      let values = document.getElementById("values");
-      values.appendChild(value);
-    }
-  </script>
+  <script src="teams.js"></script>
+  <script src="script.js"></script>
 </html>
