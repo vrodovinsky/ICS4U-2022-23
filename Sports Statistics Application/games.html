@@ -4,7 +4,81 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Games | NBA</title>
   </head>
-  <body></body>
+  <body onload="navbarStart()">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="">
+          <img src="./nbaLogo.png" height="500" width="100" />
+        </a>
+
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="./index.html"> Standings </a>
+
+          <a class="navbar-item" href="./games.html"> Games </a>
+
+          <a class="navbar-item" href="./admin.html">
+            Admin
+            <!--input games-->
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> Teams </a>
+            <div class="navbar-dropdown">
+              <div class="nested dropdown">
+                <a class="navbar-item">
+                  <span class="icon-text">
+                    <span>Eastern Conference</span>
+                    <span class="icon">
+                      <i class="fa-regular fa-angle-down"></i>
+                    </span>
+                  </span>
+                </a>
+                <div class="dropdown-menu" id="eastern-menu" role="menu"></div>
+              </div>
+              <div class="nested dropdown">
+                <a class="navbar-item">
+                  <span class="icon-text">
+                    <span>Western Conference</span>
+                    <span class="icon">
+                      <i class="fa-regular fa-angle-down"></i>
+                    </span>
+                  </span>
+                </a>
+                <div class="dropdown-menu" id="western-menu" role="menu"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div>
+      <input type="date" />
+    </div>
+  </body>
 </html>
