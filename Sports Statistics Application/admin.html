@@ -8,9 +8,14 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Admin | NBA</title>
   </head>
-  <body>
+  <body onload="start()">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="">
@@ -32,33 +37,37 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item"> Standings </a>
+          <a class="navbar-item" href="./index.html"> Standings </a>
 
-          <a class="navbar-item"> Games </a>
+          <a class="navbar-item" href="./games.html"> Games </a>
 
-          <a class="navbar-item">
-            Admin
-            <!--input games-->
-          </a>
+          <a class="navbar-item" href="./admin.html"> Admin </a>
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link"> Teams </a>
             <div class="navbar-dropdown">
-              <a class="navbar-item"> Atlanta Hawks </a>
-              <a class="navbar-item"> Boston Celtics </a>
-              <a class="navbar-item"> Chicago Bulls </a>
-              <a class="navbar-item"> Charlotte Hornets </a>
-              <a class="navbar-item"> Brooklyn Nets </a>
-              <a class="navbar-item"> Cleveland Cavaliers </a>
-              <a class="navbar-item"> Maimi Heat </a>
-              <a class="navbar-item"> New York Knicks </a>
-              <a class="navbar-item"> Detriot Pistons </a>
-              <a class="navbar-item"> Orlando Magic </a>
-              <a class="navbar-item"> Philadelphia 76ers </a>
-              <a class="navbar-item"> Indiana Pacers </a>
-              <a class="navbar-item"> Washington Wizards </a>
-              <a class="navbar-item"> Toronto Raptors </a>
-              <a class="navbar-item"> Milwaukee Bucks </a>
+              <div class="nested dropdown">
+                <a class="navbar-item">
+                  <span class="icon-text">
+                    <span>Eastern Conference</span>
+                    <span class="icon">
+                      <i class="fa-regular fa-angle-down"></i>
+                    </span>
+                  </span>
+                </a>
+                <div class="dropdown-menu" id="eastern-menu" role="menu"></div>
+              </div>
+              <div class="nested dropdown">
+                <a class="navbar-item">
+                  <span class="icon-text">
+                    <span>Western Conference</span>
+                    <span class="icon">
+                      <i class="fa-regular fa-angle-down"></i>
+                    </span>
+                  </span>
+                </a>
+                <div class="dropdown-menu" id="western-menu" role="menu"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -66,9 +75,14 @@
     </nav>
     <div>
       <form>
-        <label>Home Team</label>
         <div>
+          <label class="label">Date</label>
+          <input class="control" type="date" id="gameDate" />
+        </div>
+        <div class="field">
+          <label class="label">Home Team</label>
           <input
+            class="control"
             type="radio"
             id="Eastern"
             name="conference"
@@ -77,6 +91,7 @@
           />
           <label for="Eastern">Eastern Conference</label><br />
           <input
+            class="control"
             type="radio"
             id="Western"
             name="conference"
@@ -85,17 +100,23 @@
           />
           <label for="Western">Western Conference</label><br />
         </div>
-        <div class="select" id="HTeam">
+        <div class="select" id="homeTeamDiv">
           <select id="homeTeam"></select>
         </div>
         <div>
-          <label>Home Team Score</label>
-          <input type="number" id="score1" />
+          <label class="label">Home Team Score</label>
+          <input
+            class="control"
+            type="number"
+            id="homeTeamScore"
+            placeholder="Points"
+          />
         </div>
 
-        <label>Away Team</label>
+        <label class="label">Away Team</label>
         <div>
           <input
+            class="control"
             type="radio"
             id="Eastern"
             name="conference"
@@ -104,6 +125,7 @@
           />
           <label for="Eastern">Eastern Conference</label><br />
           <input
+            class="control"
             type="radio"
             id="Western"
             name="conference"
@@ -112,20 +134,31 @@
           />
           <label for="Western">Western Conference</label><br />
         </div>
-        <div class="select" id="ATeam">
+        <div class="select" id="awayTeamDiv">
           <select id="awayTeam"></select>
         </div>
 
         <div>
-          <label>Away Team Score</label>
-          <input type="number" id="score2" />
+          <label class="label">Away Team Score</label>
+          <input
+            class="control"
+            type="number"
+            id="awayTeamScore"
+            placeholder="Points"
+          />
         </div>
 
-        <button onclick="store()">Submit</button>
+        <button onclick="storeGame()">Submit</button>
       </form>
     </div>
   </body>
-
   <script src="teams.js"></script>
   <script src="script.js"></script>
+
+  <script>
+    function start() {
+      navbarStart();
+      document.getElementById("gameDate").valueAsDate = new Date();
+    }
+  </script>
 </html>

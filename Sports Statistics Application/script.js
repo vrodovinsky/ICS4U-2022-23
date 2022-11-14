@@ -1,7 +1,43 @@
-function store() {
-  let team1 = document.getElementById("team1");
-  localStorage.setItem("team1", team1.value);
+function storeGame() {
+  const teams = JSON.parse(localStorage.getItem("teams"));
+
+  let homeTeamId = parseInt(document.getElementById("homeTeam").value);
+  let homeTeam = teams.find((team) => team.id === homeTeamId);
+  let awayTeamId = parseInt(document.getElementById("awayTeam").value);
+  let awayTeam = teams.find((team) => team.id === awayTeamId);
+
+  let homeTeamScore = document.getElementById("homeTeamScore").value;
+  let awayTeamScore = document.getElementById("awayTeamScore").value;
+
+  const gameDate = new Date(document.getElementById("gameDate").value);
+
+  if (homeTeamScore > awayTeamScore) {
+    homeTeam.W++;
+    awayTeam.L++;
+  } else {
+    homeTeam.L++;
+    awayTeam.W++;
+  }
+
+  let homeGame = {
+    home: true,
+    date: gameDate,
+    opp: awayTeam.name,
+    score: [homeTeamScore, awayTeamScore],
+  };
+  homeTeam.games.push(homeGame);
+
+  let awayGame = {
+    home: false,
+    date: gameDate,
+    opp: homeTeam.name,
+    score: [awayTeamScore, homeTeamScore],
+  };
+  awayTeam.games.push(awayGame);
+
+  localStorage.setItem("teams", JSON.stringify(teams));
 }
+
 function calculateHomeWinsLosses(games) {
   let wins = 0;
   let losses = 0;
@@ -133,9 +169,6 @@ function sort(field, conference) {
   }
   return teams;
 }
-
-createTable(teams, "Eastern");
-createTable(teams, "Western");
 
 function chooseConference(dropdownId) {
   let dropdown = document.getElementById(dropdownId);
