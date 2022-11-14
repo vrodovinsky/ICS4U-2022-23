@@ -4,22 +4,148 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Teams | NBA</title>
   </head>
   <body onload="start()">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="">
+          <img src="./nbaLogo.png" height="500" width="100" />
+        </a>
+
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="./index.html"> Standings </a>
+
+          <a class="navbar-item" href="./games.html"> Games </a>
+
+          <a class="navbar-item" href="./admin.html">
+            Admin
+            <!--input games-->
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> Teams </a>
+            <div class="navbar-dropdown">
+              <div class="nested dropdown">
+                <a class="navbar-item">
+                  <span class="icon-text">
+                    <span>Eastern Conference</span>
+                    <span class="icon">
+                      <i class="fa-regular fa-angle-down"></i>
+                    </span>
+                  </span>
+                </a>
+                <div class="dropdown-menu" id="eastern-menu" role="menu"></div>
+              </div>
+              <div class="nested dropdown">
+                <a class="navbar-item">
+                  <span class="icon-text">
+                    <span>Western Conference</span>
+                    <span class="icon">
+                      <i class="fa-regular fa-angle-down"></i>
+                    </span>
+                  </span>
+                </a>
+                <div class="dropdown-menu" id="western-menu" role="menu"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div id="test"></div>
     <!-- Header with team name, summary of statistics (win, loses, PCT) -->
+    <section class="hero">
+      <div class="hero-body">
+        <p class="title has-text-centered" id="teamName"></p>
+      </div>
+    </section>
+    <nav class="level">
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Rank</p>
+          <p class="title" id="rank"></p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Wins</p>
+          <p class="title" id="wins"></p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Loses</p>
+          <p class="title" id="loses"></p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">PCT</p>
+          <p class="title" id="PCT"></p>
+        </div>
+      </div>
+    </nav>
     <!-- Panel of games -->
+
+    <div class="columns">
+      <div class="column container has-background-grey-lighter">
+        First column
+      </div>
+      <div class="column">Second column</div>
+      <div class="column">Third column</div>
+      <div class="column">Fourth column</div>
+    </div>
   </body>
+  <script src="teams.js"></script>
+  <script src="script.js"></script>
   <script>
     function start() {
+      navbarStart();
       const dataString = localStorage.getItem("teams");
       const teams = JSON.parse(dataString);
       let params = new URL(document.location).searchParams;
 
-      const team = teams.filter((team) => team.id == params.get("id"));
+      const id = parseInt(params.get("id"));
+      const team = teams.find((team) => team.id === id);
 
-      document.querySelector("#test").textContent = team[0].name;
+      calculateRank(teams, team.conference);
+
+      let teamName = document.getElementById("teamName");
+      teamName.textContent = team.name;
+      let rank = document.getElementById("rank");
+      rank.textContent = team.rank;
+      let wins = document.getElementById("wins");
+      wins.textContent = team.W;
+      let loses = document.getElementById("loses");
+      loses.textContent = team.L;
+      let PCT = document.getElementById("PCT");
+      PCT.textContent = team.PCT;
+
+      let game = team.games.forEach((element) => {});
     }
   </script>
 </html>
