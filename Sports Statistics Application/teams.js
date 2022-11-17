@@ -41,7 +41,7 @@ team["games"] = [
   {
     home: false,
     date: "2022-10-29",
-    opp: "Milkwaukee Bucks",
+    opp: "Milwaukee Bucks",
     score: [115, 123],
   },
   {
@@ -1290,9 +1290,51 @@ team["PCT"] = 0;
 team["games"] = [
   {
     home: true,
-    date: "",
-    opp: 0,
-    score: [0, 0],
+    date: "2022-10-19",
+    opp: "New York Knicks",
+    score: [115, 112],
+  },
+  {
+    home: false,
+    date: "2022-10-21",
+    opp: "Houston Rockets",
+    score: [129, 122],
+  },
+  {
+    home: false,
+    date: "2022-10-22",
+    opp: "Dallas Mavericks",
+    score: [96, 137],
+  },
+  {
+    home: true,
+    date: "2022-10-24",
+    opp: "Brooklyn Nets",
+    score: [134, 124],
+  },
+  {
+    home: false,
+    date: "2022-10-27",
+    opp: "Sacramento Kings",
+    score: [125, 110],
+  },
+  {
+    home: false,
+    date: "2022-10-29",
+    opp: "Utah Jazz",
+    score: [123, 124],
+  },
+  {
+    home: false,
+    date: "2022-10-31",
+    opp: "Utah Jazz",
+    score: [105, 121],
+  },
+  {
+    home: false,
+    date: "2022-11-02",
+    opp: "Portland Trail Blazers",
+    score: [111, 106],
   },
 ];
 teams.push(team);
@@ -1306,10 +1348,46 @@ team["L"] = 3;
 team["PCT"] = 0;
 team["games"] = [
   {
+    home: false,
+    date: "2022-10-19",
+    opp: "Minnesota Timberwolves",
+    score: [108, 115],
+  },
+  {
+    home: false,
+    date: "2022-10-22",
+    opp: "Denver Nuggets",
+    score: [117, 122],
+  },
+  {
     home: true,
-    date: "",
-    opp: 0,
-    score: [0, 0],
+    date: "2022-10-23",
+    opp: "Minnesota Timberwolves",
+    score: [106, 116],
+  },
+  {
+    home: true,
+    date: "2022-10-25",
+    opp: "Los Angeles Clippers",
+    score: [108, 94],
+  },
+  {
+    home: true,
+    date: "2022-10-27",
+    opp: "Los Angeles Clippers",
+    score: [118, 110],
+  },
+  {
+    home: false,
+    date: "2022-10-29",
+    opp: "Dallas Mavericks",
+    score: [117, 111],
+  },
+  {
+    home: true,
+    date: "2022-11-01",
+    opp: "Orlando Magic",
+    score: [116, 108],
   },
 ];
 teams.push(team);
@@ -1323,10 +1401,46 @@ team["L"] = 3;
 team["PCT"] = 0;
 team["games"] = [
   {
+    home: false,
+    date: "2022-10-19",
+    opp: "Brooklyn Nets",
+    score: [130, 108],
+  },
+  {
+    home: false,
+    date: "2022-10-21",
+    opp: "Charlotte Hornets",
+    score: [124, 112],
+  },
+  {
     home: true,
-    date: "",
-    opp: 0,
-    score: [0, 0],
+    date: "2022-10-23",
+    opp: "Utah Jazz",
+    score: [121, 122],
+  },
+  {
+    home: true,
+    date: "2022-10-25",
+    opp: "Dallas Mavericks",
+    score: [113, 111],
+  },
+  {
+    home: false,
+    date: "2022-10-28",
+    opp: "Phoenix Suns",
+    score: [111, 124],
+  },
+  {
+    home: false,
+    date: "2022-10-30",
+    opp: "Los Angeles Clippers",
+    score: [112, 91],
+  },
+  {
+    home: false,
+    date: "2022-11-02",
+    opp: "Los Angeles Lakers",
+    score: [117, 120],
   },
 ];
 teams.push(team);
@@ -1340,10 +1454,46 @@ team["L"] = 2;
 team["PCT"] = 0;
 team["games"] = [
   {
+    home: false,
+    date: "2022-10-19",
+    opp: "Sacramento Kings",
+    score: [115, 108],
+  },
+  {
     home: true,
-    date: "",
-    opp: 0,
-    score: [0, 0],
+    date: "2022-10-21",
+    opp: "Phoenix Suns",
+    score: [113, 111],
+  },
+  {
+    home: false,
+    date: "2022-10-23",
+    opp: "Los Angeles Lakers",
+    score: [106, 104],
+  },
+  {
+    home: true,
+    date: "2022-10-24",
+    opp: "Denver Nuggets",
+    score: [135, 110],
+  },
+  {
+    home: true,
+    date: "2022-10-26",
+    opp: "Maimi Heat",
+    score: [98, 119],
+  },
+  {
+    home: true,
+    date: "2022-10-28",
+    opp: "Houston Rockets",
+    score: [125, 111],
+  },
+  {
+    home: true,
+    date: "2022-11-02",
+    opp: "Memphis Grizzlies",
+    score: [106, 111],
   },
 ];
 teams.push(team);
@@ -1358,9 +1508,45 @@ team["PCT"] = 0;
 team["games"] = [
   {
     home: true,
-    date: "",
-    opp: 0,
-    score: [0, 0],
+    date: "2022-10-19",
+    opp: "Dallas Mavericks",
+    score: [107, 105],
+  },
+  {
+    home: false,
+    date: "2022-10-21",
+    opp: "Portland Trail Blazers",
+    score: [111, 113],
+  },
+  {
+    home: false,
+    date: "2022-10-23",
+    opp: "Los Angeles Clippers",
+    score: [112, 95],
+  },
+  {
+    home: true,
+    date: "2022-10-25",
+    opp: "Golden State Warriors",
+    score: [134, 105],
+  },
+  {
+    home: true,
+    date: "2022-10-28",
+    opp: "New Orleans Pelicans",
+    score: [124, 111],
+  },
+  {
+    home: true,
+    date: "2022-10-30",
+    opp: "Houston Rockets",
+    score: [124, 109],
+  },
+  {
+    home: true,
+    date: "2022-11-01",
+    opp: "Minnesota Timberwolves",
+    score: [116, 107],
   },
 ];
 teams.push(team);
@@ -1375,9 +1561,51 @@ team["PCT"] = 0;
 team["games"] = [
   {
     home: true,
-    date: "",
-    opp: 0,
-    score: [0, 0],
+    date: "2022-10-19",
+    opp: "Charlotte Hornets",
+    score: [102, 129],
+  },
+  {
+    home: false,
+    date: "2022-10-21",
+    opp: "Indiana Pacers",
+    score: [137, 134],
+  },
+  {
+    home: false,
+    date: "2022-10-22",
+    opp: "Philadelphia 76ers",
+    score: [114, 105],
+  },
+  {
+    home: false,
+    date: "2022-10-24",
+    opp: "Minnesota Timberwolves",
+    score: [115, 106],
+  },
+  {
+    home: false,
+    date: "2022-10-26",
+    opp: "Minnesota Timberwolves",
+    score: [122, 134],
+  },
+  {
+    home: true,
+    date: "2022-10-28",
+    opp: "Chicago Bulls",
+    score: [129, 124],
+  },
+  {
+    home: true,
+    date: "2022-10-30",
+    opp: "Minnesota Timberwolves",
+    score: [107, 98],
+  },
+  {
+    home: true,
+    date: "2022-11-02",
+    opp: "Toronto Raptors",
+    score: [100, 143],
   },
 ];
 teams.push(team);
