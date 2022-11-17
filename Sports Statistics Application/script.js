@@ -210,6 +210,7 @@ function navbarStart() {
     let item = document.createElement("div");
     item.classList.add("dropdown-content");
     let link = document.createElement("a");
+    link.classList.add("dropdown-item", "has-text-link-dark");
     link.textContent = team.name;
     link.href = "./teams.html?id=" + team.id;
     item.appendChild(link);
@@ -224,6 +225,7 @@ function navbarStart() {
     let item = document.createElement("div");
     item.classList.add("dropdown-content");
     let link = document.createElement("a");
+    link.classList.add("dropdown-item", "has-text-link-dark");
     link.textContent = team.name;
     link.href = "./teams.html?id=" + team.id;
     item.appendChild(link);
