@@ -10,7 +10,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
     <title>Admin | NBA</title>
@@ -51,7 +51,7 @@
                   <span class="icon-text">
                     <span>Eastern Conference</span>
                     <span class="icon">
-                      <i class="fa-regular fa-angle-down"></i>
+                      <i class="fa-solid fa-angle-down has-text-link"></i>
                     </span>
                   </span>
                 </a>
@@ -62,7 +62,7 @@
                   <span class="icon-text">
                     <span>Western Conference</span>
                     <span class="icon">
-                      <i class="fa-regular fa-angle-down"></i>
+                      <i class="fa-solid fa-angle-down has-text-link"></i>
                     </span>
                   </span>
                 </a>
@@ -73,23 +73,34 @@
         </div>
       </div>
     </nav>
-    <div>
-      <form>
-        <div>
-          <label class="label">Date</label>
-          <input class="control" type="date" id="gameDate" />
-        </div>
+
+
+    <div class="card has-background-info-dark">
+      <div class="card-content login">
+        <p class="title has-text-white">Add game</p>
+
         <div class="field">
-          <label class="label">Home Team</label>
-          <input
-            class="control"
-            type="radio"
-            id="Eastern"
-            name="conference"
-            value="Econference"
-            onclick="chooseConference('homeTeam')"
-          />
-          <label for="Eastern">Eastern Conference</label><br />
+          <label class="label has-text-white">Date</label>
+          <div class="control">
+            <input class="input" type="date" id="gameDate" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label has-text-white">Home Team</label>
+          <div class="control has-text-white">
+            <input
+              class="control"
+              type="radio"
+              id="Eastern"
+              name="conference"
+              value="Econference"
+              onclick="chooseConference('homeTeam')"
+            />
+            <label for="Eastern">Eastern Conference</label>
+          </div>
+        </div>
+        <div class="field has-text-white">
           <input
             class="control"
             type="radio"
@@ -98,32 +109,36 @@
             value="Wconference"
             onclick="chooseConference('homeTeam')"
           />
-          <label for="Western">Western Conference</label><br />
-        </div>
-        <div class="select" id="homeTeamDiv">
-          <select id="homeTeam"></select>
-        </div>
-        <div>
-          <label class="label">Home Team Score</label>
-          <input
-            class="control"
-            type="number"
-            id="homeTeamScore"
-            placeholder="Points"
-          />
+          <label for="Western">Western Conference</label>
         </div>
 
-        <label class="label">Away Team</label>
-        <div>
-          <input
-            class="control"
-            type="radio"
-            id="Eastern"
-            name="conference"
-            value="Econference"
-            onclick="chooseConference('awayTeam')"
-          />
-          <label for="Eastern">Eastern Conference</label><br />
+        <div class="field">
+          <label class="label has-text-white">Home Team Score</label>
+          <div class="control">
+            <input
+              class="control input"
+              type="number"
+              id="homeTeamScore"
+              placeholder="Points"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label has-text-white">Away Team</label>
+          <div class="control has-text-white">
+            <input
+              class="control"
+              type="radio"
+              id="Eastern"
+              name="conference"
+              value="Econference"
+              onclick="chooseConference('awayTeam')"
+            />
+            <label for="Eastern">Eastern Conference</label>
+          </div>
+        </div>
+        <div class="field has-text-white">
           <input
             class="control"
             type="radio"
@@ -132,24 +147,27 @@
             value="Wconference"
             onclick="chooseConference('awayTeam')"
           />
-          <label for="Western">Western Conference</label><br />
-        </div>
-        <div class="select" id="awayTeamDiv">
-          <select id="awayTeam"></select>
+          <label for="Western">Western Conference</label>
         </div>
 
-        <div>
-          <label class="label">Away Team Score</label>
-          <input
-            class="control"
-            type="number"
-            id="awayTeamScore"
-            placeholder="Points"
-          />
+        <div class="field">
+          <label class="label has-text-white">Away Team Score</label>
+          <div class="control">
+            <input
+              class="control input"
+              type="number"
+              id="awayTeamScore"
+              placeholder="Points"
+            />
         </div>
 
-        <button onclick="storeGame()">Submit</button>
-      </form>
+        <div class="has-text-centered">
+           <button onclick="storeGame()" class="button has-background-info-dark has-text-white mt-4">Submit</button>
+        </div>
+
+        
+
+      </div>
     </div>
   </body>
   <script src="teams.js"></script>
