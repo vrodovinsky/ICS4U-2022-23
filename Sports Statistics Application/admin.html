@@ -74,8 +74,8 @@
       </div>
     </nav>
 
-
-    <div class="card has-background-info-dark">
+  <div class="container mt-4">
+    <div class="card has-background-link">
       <div class="card-content login">
         <p class="title has-text-white">Add game</p>
 
@@ -110,6 +110,14 @@
             onclick="chooseConference('homeTeam')"
           />
           <label for="Western">Western Conference</label>
+        </div>
+
+        <div class="field">
+          <div class="control" id="HTeam">
+            <div class="select" id="homeTeamDiv">
+              <select id="homeTeam"></select>
+            </div>
+          </div>
         </div>
 
         <div class="field">
@@ -150,6 +158,14 @@
           <label for="Western">Western Conference</label>
         </div>
 
+         <div class="field">
+          <div class="control" id="ATeam">
+            <div class="select" id="awayTeamDiv">
+              <select id="awayTeam"></select>
+            </div>
+          </div>
+        </div>
+
         <div class="field">
           <label class="label has-text-white">Away Team Score</label>
           <div class="control">
@@ -162,13 +178,11 @@
         </div>
 
         <div class="has-text-centered">
-           <button onclick="storeGame()" class="button has-background-info-dark has-text-white mt-4">Submit</button>
+           <button onclick="storeGame()" class="button has-background-link has-text-white mt-4">Submit</button>
         </div>
-
-        
-
-      </div>
     </div>
+    </div>
+  </div>
   </body>
   <script src="teams.js"></script>
   <script src="script.js"></script>
