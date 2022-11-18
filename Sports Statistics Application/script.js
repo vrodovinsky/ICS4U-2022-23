@@ -177,7 +177,7 @@ function chooseConference(dropdownId) {
     dropdown.removeChild(dropdown.firstChild);
   }
 
-  let v = document.getElementsByName("conference");
+  let v = document.querySelectorAll("[name]");
   let conf = "";
 
   for (let i = 0; i < v.length; i++) {
@@ -188,7 +188,9 @@ function chooseConference(dropdownId) {
 
   teams = JSON.parse(teams);
 
-  const confTeams = teams.filter((c) => c.conference == conf);
+  const confTeams = teams.filter((c) => {
+    return c.conference == conf.split("-")[0];
+  });
 
   confTeams.forEach((team) => {
     let o = document.createElement("option");
@@ -231,4 +233,133 @@ function navbarStart() {
     item.appendChild(link);
     Wnavbar.appendChild(item);
   });
+}
+
+function getGamesByDate(page) {
+  const PAGE_SIZE = 2;
+  const teams = JSON.parse(localStorage.getItem("teams"));
+
+  let date = new Date(document.getElementById("date").value);
+  let totalGames = 0
+  let count = 0
+
+  let allGames = document.getElementById("allGames")
+  while (allGames.firstChild) {
+    allGames.removeChild(allGames.firstChild);
+  }
+
+  teams.forEach((team) => {
+    team.games.forEach((game) => {
+      if (new Date(game.date).getTime() === date.getTime()) {
+        totalGames++
+      }
+    });
+  });
+
+  teams.forEach((team) => {
+    team.games.forEach((game) => {
+      if (new Date(game.date).getTime() === date.getTime()) {
+        const opp = teams.find((team) => team.name === game.opp);
+        if (count >= (page - 1) * PAGE_SIZE && count < page * PAGE_SIZE) {
+          displayGame(game, team, opp);
+        }
+        count++
+      }
+    });
+  });
+  displayButtons(totalGames, PAGE_SIZE, page)
+}
+
+function displayButtons(gamesCount, pageSize, currentPage) {
+  let numPages = gamesCount / pageSize;
+  let nav = document.getElementById("paginator")
+
+  while (nav.firstChild) {
+    nav.removeChild(nav.firstChild);
+  }
+
+  let ul = document.createElement("ul")
+  ul.classList.add("pagination-list")
+  nav.append(ul)
+
+  for (let i = 0; i < numPages; i++) {
+    let li = document.createElement("li")
+    ul.append(li)
+
+    let button = document.createElement("a")
+    if (i + 1 == currentPage) {
+      button.classList.add("pagination-link", "is-current")
+    } else {
+      button.classList.add("pagination-link")
+    }
+    button.addEventListener('click', () => { getGamesByDate(i + 1) })
+    button.textContent = i + 1
+    li.append(button)
+  }
+}
+
+function displayGame(game, team, opp) {
+  let card = document.createElement("div");
+  card.classList.add("card");
+  let cardContent = document.createElement("div");
+  cardContent.classList.add("card-content");
+  card.append(cardContent);
+  let content = document.createElement("div");
+  content.classList.add("content");
+  cardContent.append(content);
+  let cardContentPage = document.createElement("div");
+  cardContentPage.classList.add("card-content");
+  content.append(cardContentPage);
+  let cardContentOpp = document.createElement("div");
+  cardContentOpp.classList.add("card-content");
+  content.append(cardContentOpp);
+
+  let homeTeam = document.createElement("p");
+  homeTeam.classList.add(
+    "title",
+    "is-4",
+    "is-flex",
+    "is-justify-content-space-between"
+  );
+  homeTeam.textContent = team.name;
+  cardContentPage.append(homeTeam);
+  let homeTeamPoints = document.createElement("p");
+  homeTeamPoints.classList.add(
+    "title",
+    "is-4",
+    "is-flex",
+    "is-justify-content-space-between"
+  );
+  homeTeamPoints.textContent = game.score[0];
+  homeTeam.append(homeTeamPoints);
+  let homeTeamScore = document.createElement("p");
+  homeTeamScore.classList.add("title", "is-6");
+  homeTeamScore.textContent = `${team.W} - ${team.L}`;
+  cardContentPage.append(homeTeamScore);
+
+  let oppTeam = document.createElement("p");
+  oppTeam.classList.add(
+    "title",
+    "is-4",
+    "is-flex",
+    "is-justify-content-space-between"
+  );
+  oppTeam.textContent = game.opp;
+  cardContentOpp.append(oppTeam);
+  let oppTeamPoints = document.createElement("p");
+  oppTeamPoints.classList.add(
+    "title",
+    "is-4",
+    "is-flex",
+    "is-justify-content-space-between"
+  );
+  oppTeamPoints.textContent = game.score[1];
+  oppTeam.append(oppTeamPoints);
+  let oppTeamScore = document.createElement("p");
+  oppTeamScore.classList.add("title", "is-6");
+  oppTeamScore.textContent = `${opp.W} - ${opp.L}`;
+  cardContentOpp.append(oppTeamScore);
+
+  let games = document.getElementById("allGames");
+  games.append(card);
 }

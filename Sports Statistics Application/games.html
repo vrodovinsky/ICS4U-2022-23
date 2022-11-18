@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="style.css" />
     <title>Games | NBA</title>
   </head>
+
   <body onload="start()">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
@@ -78,112 +79,19 @@
     </nav>
 
     <div>
-      <input type="date" id="date" onchange="displayGames()" />
+      <input type="date" id="date" onchange="getGamesByDate(1)" />
     </div>
     <div class="columns">
       <div class="column" id="allGames"></div>
     </div>
 
-    <nav class="pagination" role="navigation" aria-label="pagination">
-      <a class="pagination-previous is-disabled" title="This is the first page"
-        >Previous</a
-      >
-      <a class="pagination-next">Next page</a>
-      <ul class="pagination-list">
-        <li>
-          <a
-            class="pagination-link is-current"
-            aria-label="Page 1"
-            aria-current="page"
-            >1</a
-          >
-        </li>
-      </ul>
-    </nav>
+    <nav id="paginator"></nav>
   </body>
   <script src="teams.js"></script>
   <script src="script.js"></script>
   <script>
     function start() {
       navbarStart();
-    }
-
-    function displayGames() {
-      const teams = JSON.parse(localStorage.getItem("teams"));
-
-      let date = new Date(document.getElementById("date").value);
-
-      teams.forEach((team) => {
-        team.games.forEach((game) => {
-          if (new Date(game.date).getTime() === date.getTime()) {
-            const opp = teams.find((team) => team.name === game.opp);
-
-            let card = document.createElement("div");
-            card.classList.add("card");
-            let cardContent = document.createElement("div");
-            cardContent.classList.add("card-content");
-            card.append(cardContent);
-            let content = document.createElement("div");
-            content.classList.add("content");
-            cardContent.append(content);
-            let cardContentPage = document.createElement("div");
-            cardContentPage.classList.add("card-content");
-            content.append(cardContentPage);
-            let cardContentOpp = document.createElement("div");
-            cardContentOpp.classList.add("card-content");
-            content.append(cardContentOpp);
-
-            let homeTeam = document.createElement("p");
-            homeTeam.classList.add(
-              "title",
-              "is-4",
-              "is-flex",
-              "is-justify-content-space-between"
-            );
-            homeTeam.textContent = team.name;
-            cardContentPage.append(homeTeam);
-            let homeTeamPoints = document.createElement("p");
-            homeTeamPoints.classList.add(
-              "title",
-              "is-4",
-              "is-flex",
-              "is-justify-content-space-between"
-            );
-            homeTeamPoints.textContent = game.score[0];
-            homeTeam.append(homeTeamPoints);
-            let homeTeamScore = document.createElement("p");
-            homeTeamScore.classList.add("title", "is-6");
-            homeTeamScore.textContent = `${team.W} - ${team.L}`;
-            cardContentPage.append(homeTeamScore);
-
-            let oppTeam = document.createElement("p");
-            oppTeam.classList.add(
-              "title",
-              "is-4",
-              "is-flex",
-              "is-justify-content-space-between"
-            );
-            oppTeam.textContent = game.opp;
-            cardContentOpp.append(oppTeam);
-            let oppTeamPoints = document.createElement("p");
-            oppTeamPoints.classList.add(
-              "title",
-              "is-4",
-              "is-flex",
-              "is-justify-content-space-between"
-            );
-            oppTeamPoints.textContent = game.score[1];
-            oppTeam.append(oppTeamPoints);
-            let oppTeamScore = document.createElement("p");
-            oppTeamScore.classList.add("title", "is-6");
-            oppTeamScore.textContent = `${opp.W} - ${opp.L}`;
-            cardContentOpp.append(oppTeamScore);
-
-            let games = document.getElementById("allGames");
-            games.append(card);
-          }
-        });
-      });
     }
   </script>
 </html>
