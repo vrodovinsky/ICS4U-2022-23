@@ -1,78 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Admin | NBA</title>
-  </head>
-  <body onload="start()">
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="">
-          <img src="./nbaLogo.png" height="500" width="100" />
-        </a>
 
-        <a
-          role="button"
-          class="navbar-burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Admin | NBA</title>
+</head>
 
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="./index.html"> Standings </a>
+<body onload="start()">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="">
+        <img src="./nbaLogo.png" height="500" width="100" />
+      </a>
 
-          <a class="navbar-item" href="./games.html"> Games </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
 
-          <a class="navbar-item" href="./admin.html"> Admin </a>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="./index.html"> Standings </a>
 
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link"> Teams </a>
-            <div class="navbar-dropdown">
-              <div class="nested dropdown">
-                <a class="navbar-item">
-                  <span class="icon-text">
-                    <span>Eastern Conference</span>
-                    <span class="icon">
-                      <i class="fa-solid fa-angle-down has-text-link"></i>
-                    </span>
+        <a class="navbar-item" href="./games.html"> Games </a>
+
+        <a class="navbar-item" href="./admin.html"> Admin </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link"> Teams </a>
+          <div class="navbar-dropdown">
+            <div class="nested dropdown">
+              <a class="navbar-item">
+                <span class="icon-text">
+                  <span>Eastern Conference</span>
+                  <span class="icon">
+                    <i class="fa-solid fa-angle-down has-text-link"></i>
                   </span>
-                </a>
-                <div class="dropdown-menu" id="eastern-menu" role="menu"></div>
-              </div>
-              <div class="nested dropdown">
-                <a class="navbar-item">
-                  <span class="icon-text">
-                    <span>Western Conference</span>
-                    <span class="icon">
-                      <i class="fa-solid fa-angle-down has-text-link"></i>
-                    </span>
+                </span>
+              </a>
+              <div class="dropdown-menu" id="eastern-menu" role="menu"></div>
+            </div>
+            <div class="nested dropdown">
+              <a class="navbar-item">
+                <span class="icon-text">
+                  <span>Western Conference</span>
+                  <span class="icon">
+                    <i class="fa-solid fa-angle-down has-text-link"></i>
                   </span>
-                </a>
-                <div class="dropdown-menu" id="western-menu" role="menu"></div>
-              </div>
+                </span>
+              </a>
+              <div class="dropdown-menu" id="western-menu" role="menu"></div>
             </div>
           </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
   <div class="container mt-4">
     <div class="card has-background-link">
@@ -89,26 +79,14 @@
         <div class="field">
           <label class="label has-text-white">Home Team</label>
           <div class="control has-text-white">
-            <input
-              class="control"
-              type="radio"
-              id="Eastern"
-              name="conference"
-              value="Econference"
-              onclick="chooseConference('homeTeam')"
-            />
+            <input class="control" type="radio" id="Eastern-Home" name="conference-homeTeam" value="Econference"
+              onclick="chooseConference('homeTeam')" />
             <label for="Eastern">Eastern Conference</label>
           </div>
         </div>
         <div class="field has-text-white">
-          <input
-            class="control"
-            type="radio"
-            id="Western"
-            name="conference"
-            value="Wconference"
-            onclick="chooseConference('homeTeam')"
-          />
+          <input class="control" type="radio" id="Western-Home" name="conference-homeTeam" value="Wconference"
+            onclick="chooseConference('homeTeam')" />
           <label for="Western">Western Conference</label>
         </div>
 
@@ -123,42 +101,25 @@
         <div class="field">
           <label class="label has-text-white">Home Team Score</label>
           <div class="control">
-            <input
-              class="control input"
-              type="number"
-              id="homeTeamScore"
-              placeholder="Points"
-            />
+            <input class="control input" type="number" id="homeTeamScore" placeholder="Points" />
           </div>
         </div>
 
         <div class="field">
           <label class="label has-text-white">Away Team</label>
           <div class="control has-text-white">
-            <input
-              class="control"
-              type="radio"
-              id="Eastern"
-              name="conference"
-              value="Econference"
-              onclick="chooseConference('awayTeam')"
-            />
+            <input class="control" type="radio" id="Eastern-Away" name="conference-awayTeam" value="Econference"
+              onclick="chooseConference('awayTeam')" />
             <label for="Eastern">Eastern Conference</label>
           </div>
         </div>
         <div class="field has-text-white">
-          <input
-            class="control"
-            type="radio"
-            id="Western"
-            name="conference"
-            value="Wconference"
-            onclick="chooseConference('awayTeam')"
-          />
+          <input class="control" type="radio" id="Western-Away" name="conference-awayTeam" value="Wconference"
+            onclick="chooseConference('awayTeam')" />
           <label for="Western">Western Conference</label>
         </div>
 
-         <div class="field">
+        <div class="field">
           <div class="control" id="ATeam">
             <div class="select" id="awayTeamDiv">
               <select id="awayTeam"></select>
@@ -169,28 +130,24 @@
         <div class="field">
           <label class="label has-text-white">Away Team Score</label>
           <div class="control">
-            <input
-              class="control input"
-              type="number"
-              id="awayTeamScore"
-              placeholder="Points"
-            />
-        </div>
+            <input class="control input" type="number" id="awayTeamScore" placeholder="Points" />
+          </div>
 
-        <div class="has-text-centered">
-           <button onclick="storeGame()" class="button has-background-link has-text-white mt-4">Submit</button>
+          <div class="has-text-centered">
+            <button onclick="storeGame()" class="button has-background-link has-text-white mt-4">Submit</button>
+          </div>
         </div>
+      </div>
     </div>
-    </div>
-  </div>
-  </body>
-  <script src="teams.js"></script>
-  <script src="script.js"></script>
+</body>
+<script src="teams.js"></script>
+<script src="script.js"></script>
 
-  <script>
-    function start() {
-      navbarStart();
-      document.getElementById("gameDate").valueAsDate = new Date();
-    }
-  </script>
+<script>
+  function start() {
+    navbarStart();
+    document.getElementById("gameDate").valueAsDate = new Date();
+  }
+</script>
+
 </html>
