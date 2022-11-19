@@ -237,7 +237,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
-team["name"] = "LA Clippers";
+team["name"] = "Los Angeles Clippers";
 team["conference"] = "Western";
 team["id"] = 5;
 team["W"] = 4;
@@ -277,7 +277,7 @@ team["games"] = [
   {
     home: true,
     date: "2022-10-30",
-    opp: "New Orlean Pelicans",
+    opp: "New Orleans Pelicans",
     score: [91, 112],
   },
   {
@@ -365,7 +365,7 @@ team["games"] = [
   {
     home: true,
     date: "2022-10-19",
-    opp: "New Orlean Pelicans",
+    opp: "New Orleans Pelicans",
     score: [108, 130],
   },
   {
@@ -526,7 +526,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
-team["name"] = "Los Angelos Lakers";
+team["name"] = "Los Angeles Lakers";
 team["conference"] = "Western";
 team["id"] = 10;
 team["W"] = 2;
@@ -572,7 +572,7 @@ team["games"] = [
   {
     home: true,
     date: "2022-11-02",
-    opp: "New Orlean Pelicans",
+    opp: "New Orleans Pelicans",
     score: [120, 117],
   },
 ];

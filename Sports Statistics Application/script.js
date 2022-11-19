@@ -250,7 +250,7 @@ function getGamesByDate(page) {
 
   teams.forEach((team) => {
     team.games.forEach((game) => {
-      if (new Date(game.date).getTime() === date.getTime()) {
+      if (new Date(game.date).getTime() === date.getTime() && game.home) {
         totalGames++
       }
     });
@@ -258,7 +258,7 @@ function getGamesByDate(page) {
 
   teams.forEach((team) => {
     team.games.forEach((game) => {
-      if (new Date(game.date).getTime() === date.getTime()) {
+      if (new Date(game.date).getTime() === date.getTime() && game.home) {
         const opp = teams.find((team) => team.name === game.opp);
         if (count >= (page - 1) * PAGE_SIZE && count < page * PAGE_SIZE) {
           displayGame(game, team, opp);

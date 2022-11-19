@@ -78,9 +78,20 @@
       </div>
     </nav>
 
-    <div>
-      <input type="date" id="date" onchange="getGamesByDate(1)" />
+    <div class="is-flex is">
+      <input
+        class="input is-justify-content-space-between"
+        type="date"
+        id="date"
+      />
+      <button
+        class="button is-justify-content-space-between"
+        onclick="getGamesByDate(1)"
+      >
+        Submit
+      </button>
     </div>
+
     <div class="columns">
       <div class="column" id="allGames"></div>
     </div>
