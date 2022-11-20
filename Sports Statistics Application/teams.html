@@ -113,12 +113,15 @@
     <div class="columns">
       <div class="column" id="allGames"></div>
     </div>
+
+    <nav id="paginator"></nav>
   </body>
   <script src="teams.js"></script>
   <script src="script.js"></script>
   <script>
     function start() {
       navbarStart();
+
       const dataString = localStorage.getItem("teams");
       const teams = JSON.parse(dataString);
       let params = new URL(document.location).searchParams;
@@ -139,73 +142,7 @@
       let PCT = document.getElementById("PCT");
       PCT.textContent = team.PCT;
 
-      let game = team.games.forEach((game) => {
-        const opp = teams.find((team) => team.name === game.opp);
-
-        let card = document.createElement("div");
-        card.classList.add("card");
-        let cardContent = document.createElement("div");
-        cardContent.classList.add("card-content");
-        card.append(cardContent);
-        let content = document.createElement("div");
-        content.classList.add("content");
-        cardContent.append(content);
-        let cardContentPage = document.createElement("div");
-        cardContentPage.classList.add("card-content");
-        content.append(cardContentPage);
-        let cardContentOpp = document.createElement("div");
-        cardContentOpp.classList.add("card-content");
-        content.append(cardContentOpp);
-
-        let pageTeam = document.createElement("p");
-        pageTeam.classList.add(
-          "title",
-          "is-4",
-          "is-flex",
-          "is-justify-content-space-between"
-        );
-        pageTeam.textContent = team.name;
-        cardContentPage.append(pageTeam);
-        let pageTeamPoints = document.createElement("p");
-        pageTeamPoints.classList.add(
-          "title",
-          "is-4",
-          "is-flex",
-          "is-justify-content-space-between"
-        );
-        pageTeamPoints.textContent = game.score[0];
-        pageTeam.append(pageTeamPoints);
-        let pageTeamScore = document.createElement("p");
-        pageTeamScore.classList.add("title", "is-6");
-        pageTeamScore.textContent = `${team.W} - ${team.L}`;
-        cardContentPage.append(pageTeamScore);
-
-        let oppTeam = document.createElement("p");
-        oppTeam.classList.add(
-          "title",
-          "is-4",
-          "is-flex",
-          "is-justify-content-space-between"
-        );
-        oppTeam.textContent = game.opp;
-        cardContentOpp.append(oppTeam);
-        let oppTeamPoints = document.createElement("p");
-        oppTeamPoints.classList.add(
-          "title",
-          "is-4",
-          "is-flex",
-          "is-justify-content-space-between"
-        );
-        oppTeamPoints.textContent = game.score[1];
-        oppTeam.append(oppTeamPoints);
-        let oppTeamScore = document.createElement("p");
-        oppTeamScore.classList.add("title", "is-6");
-        oppTeamScore.textContent = `${opp.W} - ${opp.L}`;
-        cardContentOpp.append(oppTeamScore);
-
-        let games = document.getElementById("allGames");
-        games.append(card);
-      });
+      getGamesByTeam(1);
     }
   </script>
 </html>

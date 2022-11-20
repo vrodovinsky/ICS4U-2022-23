@@ -236,7 +236,7 @@ function navbarStart() {
 }
 
 function getGamesByDate(page) {
-  const PAGE_SIZE = 2;
+  const PAGE_SIZE = 3;
   const teams = JSON.parse(localStorage.getItem("teams"));
 
   let date = new Date(document.getElementById("date").value);
@@ -270,6 +270,36 @@ function getGamesByDate(page) {
   displayButtons(totalGames, PAGE_SIZE, page)
 }
 
+function getGamesByTeam(page) {
+  const PAGE_SIZE = 3;
+  const dataString = localStorage.getItem("teams");
+  const teams = JSON.parse(dataString);
+  let params = new URL(document.location).searchParams;
+
+  const id = parseInt(params.get("id"));
+  const team = teams.find((team) => team.id === id);
+
+  let totalGames = team.games.length
+  let count = 0
+
+  let allGames = document.getElementById("allGames")
+  while (allGames.firstChild) {
+    allGames.removeChild(allGames.firstChild);
+  }
+
+
+  teams.forEach((team) => {
+    team.games.forEach((game) => {
+      const opp = teams.find((team) => team.name === game.opp);
+      if (count >= (page - 1) * PAGE_SIZE && count < page * PAGE_SIZE) {
+        displayGame(game, team, opp);
+      }
+      count++
+    });
+  });
+  displayButtons(totalGames, PAGE_SIZE, page)
+}
+
 function displayButtons(gamesCount, pageSize, currentPage) {
   let numPages = gamesCount / pageSize;
   let nav = document.getElementById("paginator")
@@ -293,6 +323,7 @@ function displayButtons(gamesCount, pageSize, currentPage) {
       button.classList.add("pagination-link")
     }
     button.addEventListener('click', () => { getGamesByDate(i + 1) })
+    button.addEventListener('click', () => { getGamesByTeam(i + 1) })
     button.textContent = i + 1
     li.append(button)
   }
