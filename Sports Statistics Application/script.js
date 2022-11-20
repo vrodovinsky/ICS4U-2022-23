@@ -267,7 +267,7 @@ function getGamesByDate(page) {
       }
     });
   });
-  displayButtons(totalGames, PAGE_SIZE, page)
+  displayButtonsByDate(totalGames, PAGE_SIZE, page)
 }
 
 function getGamesByTeam(page) {
@@ -288,19 +288,19 @@ function getGamesByTeam(page) {
   }
 
 
-  teams.forEach((team) => {
-    team.games.forEach((game) => {
-      const opp = teams.find((team) => team.name === game.opp);
-      if (count >= (page - 1) * PAGE_SIZE && count < page * PAGE_SIZE) {
-        displayGame(game, team, opp);
-      }
-      count++
-    });
+
+  team.games.forEach((game) => {
+    const opp = teams.find((team) => team.name === game.opp);
+    if (count >= (page - 1) * PAGE_SIZE && count < page * PAGE_SIZE) {
+      displayGame(game, team, opp);
+    }
+    count++
   });
-  displayButtons(totalGames, PAGE_SIZE, page)
+
+  displayButtonsByTeam(totalGames, PAGE_SIZE, page)
 }
 
-function displayButtons(gamesCount, pageSize, currentPage) {
+function displayButtonsByDate(gamesCount, pageSize, currentPage) {
   let numPages = gamesCount / pageSize;
   let nav = document.getElementById("paginator")
 
@@ -322,7 +322,35 @@ function displayButtons(gamesCount, pageSize, currentPage) {
     } else {
       button.classList.add("pagination-link")
     }
+
     button.addEventListener('click', () => { getGamesByDate(i + 1) })
+    button.textContent = i + 1
+    li.append(button)
+  }
+}
+
+function displayButtonsByTeam(gamesCount, pageSize, currentPage) {
+  let numPages = gamesCount / pageSize;
+  let nav = document.getElementById("paginator")
+
+  while (nav.firstChild) {
+    nav.removeChild(nav.firstChild);
+  }
+
+  let ul = document.createElement("ul")
+  ul.classList.add("pagination-list")
+  nav.append(ul)
+
+  for (let i = 0; i < numPages; i++) {
+    let li = document.createElement("li")
+    ul.append(li)
+
+    let button = document.createElement("a")
+    if (i + 1 == currentPage) {
+      button.classList.add("pagination-link", "is-current")
+    } else {
+      button.classList.add("pagination-link")
+    }
     button.addEventListener('click', () => { getGamesByTeam(i + 1) })
     button.textContent = i + 1
     li.append(button)
