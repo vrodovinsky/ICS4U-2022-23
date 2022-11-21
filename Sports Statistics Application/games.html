@@ -77,26 +77,33 @@
         </div>
       </div>
     </nav>
+    <div class="container mt-2 mb-6">
+      <div class="is-flex mb-3">
+        <input
+          class="input is-justify-content-space-between"
+          type="date"
+          id="date"
+        />
+        <button
+          class="button is-justify-content-space-between"
+          onclick="getGamesByDate(1)"
+        >
+          Submit
+        </button>
+      </div>
 
-    <div class="is-flex is">
-      <input
-        class="input is-justify-content-space-between"
-        type="date"
-        id="date"
-      />
-      <button
-        class="button is-justify-content-space-between"
-        onclick="getGamesByDate(1)"
-      >
-        Submit
-      </button>
+      <section class="hero">
+        <div class="hero-body">
+          <p class="title has-text-centered has-text-link-dark">Games on:</p>
+        </div>
+      </section>
+
+      <div class="columns">
+        <div class="column" id="allGames"></div>
+      </div>
+
+      <nav id="paginator"></nav>
     </div>
-
-    <div class="columns">
-      <div class="column" id="allGames"></div>
-    </div>
-
-    <nav id="paginator"></nav>
   </body>
   <script src="teams.js"></script>
   <script src="script.js"></script>
