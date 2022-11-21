@@ -12,14 +12,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
     <title>Standings | NBA</title>
   </head>
   <body onload="start()">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="">
-          <img src="./nbaLogo.png" height="500" width="100" />
+        <a class="navbar-item" href="index.html">
+          <img src="./images/nbaLogo.png" height="500" width="100" />
         </a>
 
         <a
@@ -88,6 +88,7 @@
           <th class="has-background-link has-text-white"></th>
           <th class="has-background-link has-text-white"></th>
           <tr>
+            <th></th>
             <th onclick="createTable(sort('rank'), 'Eastern');">Rank</th>
             <th onclick="createTable(sort('name'), 'Eastern');">Name</th>
             <th onclick="createTable(sort('W'), 'Eastern');">Wins</th>
@@ -125,8 +126,8 @@
       </table>
     </div>
   </body>
-  <script src="teams.js"></script>
-  <script src="script.js"></script>
+  <script src="./JS/script.js"></script>
+  <script src="./JS/teams.js"></script>
 
   <script>
     function start() {

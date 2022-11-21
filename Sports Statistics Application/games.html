@@ -12,15 +12,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
     <title>Games | NBA</title>
   </head>
 
   <body onload="start()">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="">
-          <img src="./nbaLogo.png" height="500" width="100" />
+        <a class="navbar-item" href="index.html">
+          <img src="./images/nbaLogo.png" height="500" width="100" />
         </a>
 
         <a
@@ -80,23 +80,19 @@
     <div class="container mt-2 mb-6">
       <div class="is-flex mb-3">
         <input
-          class="input is-justify-content-space-between"
+          class="input is-justify-content-space-between is-link"
           type="date"
           id="date"
         />
         <button
-          class="button is-justify-content-space-between"
+          class="button is-justify-content-space-between is-link is-outlined"
           onclick="getGamesByDate(1)"
         >
           Submit
         </button>
       </div>
 
-      <section class="hero">
-        <div class="hero-body">
-          <p class="title has-text-centered has-text-link-dark">Games on:</p>
-        </div>
-      </section>
+      <div id="pageDate"></div>
 
       <div class="columns">
         <div class="column" id="allGames"></div>
@@ -105,8 +101,8 @@
       <nav id="paginator"></nav>
     </div>
   </body>
-  <script src="teams.js"></script>
-  <script src="script.js"></script>
+  <script src="./JS/script.js"></script>
+  <script src="./JS/teams.js"></script>
   <script>
     function start() {
       navbarStart();

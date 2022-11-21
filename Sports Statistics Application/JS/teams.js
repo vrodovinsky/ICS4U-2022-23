@@ -1,6 +1,7 @@
 let teams = [];
 
 let team = {};
+team["logo"] = "AH.png";
 team["name"] = "Atlanta Hawks";
 team["conference"] = "Eastern";
 team["id"] = 1;

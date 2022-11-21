@@ -81,6 +81,14 @@ function createTable(teams, conference) {
     }
     const row = document.createElement("tr");
     let coll = document.createElement("td");
+    let link = document.createElement("a");
+    let img = document.createElement("img")
+    img.src = `./images/ ${team.logo}`
+    link.href = "./teams.html?id=" + team.id;
+    coll.appendChild(link);
+    row.appendChild(coll);
+
+    coll = document.createElement("td");
     coll.textContent = team.rank;
     row.appendChild(coll);
     coll = document.createElement("td");
@@ -239,9 +247,31 @@ function getGamesByDate(page) {
   const PAGE_SIZE = 3;
   const teams = JSON.parse(localStorage.getItem("teams"));
 
+  const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
   let date = new Date(document.getElementById("date").value);
+  let monthName = month[date.getMonth()];
+  let nameDate = `${monthName} ${date.getDate()}, ${date.getFullYear()}`
   let totalGames = 0
   let count = 0
+
+  let gameDate = document.getElementById("pageDate")
+  while (gameDate.firstChild) {
+    gameDate.removeChild(gameDate.firstChild);
+  }
+
+  let hero = document.createElement("section")
+  hero.classList.add("hero")
+  let heroBody = document.createElement("div")
+  heroBody.classList.add("hero-body")
+  hero.append(heroBody)
+  let p = document.createElement("p")
+  p.classList.add("title", "has-text-centered", "has-text-link-dark")
+  p.textContent = `Games on ${nameDate}`
+  heroBody.append(p)
+  let pageDate = document.getElementById("pageDate");
+  pageDate.append(hero);
+
 
   let allGames = document.getElementById("allGames")
   while (allGames.firstChild) {

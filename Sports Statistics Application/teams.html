@@ -12,14 +12,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
     <title>Teams | NBA</title>
   </head>
   <body onload="start()">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="">
-          <img src="./nbaLogo.png" height="500" width="100" />
+        <a class="navbar-item" href="index.html">
+          <img src="./images/nbaLogo.png" height="500" width="100" />
         </a>
 
         <a
@@ -41,10 +41,7 @@
 
           <a class="navbar-item" href="./games.html"> Games </a>
 
-          <a class="navbar-item" href="./admin.html">
-            Admin
-            <!--input games-->
-          </a>
+          <a class="navbar-item" href="./admin.html"> Admin </a>
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link"> Teams </a>
@@ -77,7 +74,6 @@
       </div>
     </nav>
 
-    <!-- Header with team name, summary of statistics (win, loses, PCT) -->
     <section class="hero">
       <div class="hero-body">
         <p class="title has-text-centered has-text-link-dark" id="teamName"></p>
@@ -119,8 +115,8 @@
       <nav id="paginator"></nav>
     </div>
   </body>
-  <script src="teams.js"></script>
-  <script src="script.js"></script>
+  <script src="./JS/script.js"></script>
+  <script src="./JS/teams.js"></script>
   <script>
     function start() {
       navbarStart();
