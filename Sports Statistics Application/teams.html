@@ -76,45 +76,48 @@
         </div>
       </div>
     </nav>
-    <div id="test"></div>
+
     <!-- Header with team name, summary of statistics (win, loses, PCT) -->
     <section class="hero">
       <div class="hero-body">
-        <p class="title has-text-centered" id="teamName"></p>
+        <p class="title has-text-centered has-text-link-dark" id="teamName"></p>
       </div>
     </section>
-    <nav class="level">
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading">Rank</p>
-          <p class="title" id="rank"></p>
+    <div class="container mt-2 mb-6">
+      <nav class="level has-background-link-dark p-6 has-text-white">
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Rank</p>
+            <p class="title has-text-white" id="rank"></p>
+          </div>
         </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading">Wins</p>
-          <p class="title" id="wins"></p>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Wins</p>
+            <p class="title has-text-white" id="wins"></p>
+          </div>
         </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading">Loses</p>
-          <p class="title" id="loses"></p>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Loses</p>
+            <p class="title has-text-white" id="loses"></p>
+          </div>
         </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading">PCT</p>
-          <p class="title" id="PCT"></p>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">PCT</p>
+            <p class="title has-text-white" id="PCT"></p>
+          </div>
         </div>
-      </div>
-    </nav>
-    <!-- Panel of games -->
-    <div class="columns">
-      <div class="column" id="allGames"></div>
-    </div>
+      </nav>
 
-    <nav id="paginator"></nav>
+      <!-- Panel of games -->
+      <div class="columns">
+        <div class="column" id="allGames"></div>
+      </div>
+
+      <nav id="paginator"></nav>
+    </div>
   </body>
   <script src="teams.js"></script>
   <script src="script.js"></script>

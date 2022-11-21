@@ -359,7 +359,7 @@ function displayButtonsByTeam(gamesCount, pageSize, currentPage) {
 
 function displayGame(game, team, opp) {
   let card = document.createElement("div");
-  card.classList.add("card");
+  card.classList.add("card", "mb-3", "has-background-link-light");
   let cardContent = document.createElement("div");
   cardContent.classList.add("card-content");
   card.append(cardContent);
@@ -378,7 +378,7 @@ function displayGame(game, team, opp) {
     "title",
     "is-4",
     "is-flex",
-    "is-justify-content-space-between"
+    "is-justify-content-space-between", "has-text-link"
   );
   homeTeam.textContent = team.name;
   cardContentPage.append(homeTeam);
@@ -387,12 +387,12 @@ function displayGame(game, team, opp) {
     "title",
     "is-4",
     "is-flex",
-    "is-justify-content-space-between"
+    "is-justify-content-space-between", "has-text-link"
   );
   homeTeamPoints.textContent = game.score[0];
   homeTeam.append(homeTeamPoints);
   let homeTeamScore = document.createElement("p");
-  homeTeamScore.classList.add("title", "is-6");
+  homeTeamScore.classList.add("title", "is-6", "has-text-link");
   homeTeamScore.textContent = `${team.W} - ${team.L}`;
   cardContentPage.append(homeTeamScore);
 
@@ -401,7 +401,7 @@ function displayGame(game, team, opp) {
     "title",
     "is-4",
     "is-flex",
-    "is-justify-content-space-between"
+    "is-justify-content-space-between", "has-text-link"
   );
   oppTeam.textContent = game.opp;
   cardContentOpp.append(oppTeam);
@@ -410,12 +410,12 @@ function displayGame(game, team, opp) {
     "title",
     "is-4",
     "is-flex",
-    "is-justify-content-space-between"
+    "is-justify-content-space-between", "has-text-link"
   );
   oppTeamPoints.textContent = game.score[1];
   oppTeam.append(oppTeamPoints);
   let oppTeamScore = document.createElement("p");
-  oppTeamScore.classList.add("title", "is-6");
+  oppTeamScore.classList.add("title", "is-6", "has-text-link");
   oppTeamScore.textContent = `${opp.W} - ${opp.L}`;
   cardContentOpp.append(oppTeamScore);
 
