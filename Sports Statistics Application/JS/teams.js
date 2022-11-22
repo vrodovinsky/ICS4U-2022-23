@@ -61,6 +61,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "BC.svg";
 team["name"] = "Boston Celtics";
 team["conference"] = "Eastern";
 team["id"] = 2;
@@ -114,6 +115,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "CB.svg";
 team["name"] = "Chicago Bulls";
 team["conference"] = "Eastern";
 team["id"] = 3;
@@ -179,6 +181,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "GSW.svg";
 team["name"] = "Golden State Warriors";
 team["conference"] = "Western";
 team["id"] = 4;
@@ -238,6 +241,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "LAC.svg";
 team["name"] = "Los Angeles Clippers";
 team["conference"] = "Western";
 team["id"] = 5;
@@ -291,6 +295,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "MH.svg";
 team["name"] = "Maimi Heat";
 team["conference"] = "Eastern";
 team["id"] = 6;
@@ -356,6 +361,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "BN.svg";
 team["name"] = "Brooklyn Nets";
 team["conference"] = "Eastern";
 team["id"] = 7;
@@ -415,6 +421,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "NYK.svg";
 team["name"] = "New York Knicks";
 team["conference"] = "Eastern";
 team["id"] = 8;
@@ -468,6 +475,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "TR.svg";
 team["name"] = "Toronto Raptors";
 team["conference"] = "Eastern";
 team["id"] = 9;
@@ -527,6 +535,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "LAL.svg";
 team["name"] = "Los Angeles Lakers";
 team["conference"] = "Western";
 team["id"] = 10;
@@ -580,6 +589,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "CH.svg";
 team["name"] = "Charlotte Hornets";
 team["conference"] = "Eastern";
 team["id"] = 11;
@@ -639,6 +649,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "CC.svg";
 team["name"] = "Cleveland Cavaliers";
 team["conference"] = "Eastern";
 team["id"] = 12;
@@ -692,6 +703,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "DP.svg";
 team["name"] = "Detriot Pistons";
 team["conference"] = "Eastern";
 team["id"] = 13;
@@ -757,6 +769,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "OM.svg";
 team["name"] = "Orlando Magic";
 team["conference"] = "Eastern";
 team["id"] = 14;
@@ -816,6 +829,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "P76.svg";
 team["name"] = "Philadelphia 76ers";
 team["conference"] = "Eastern";
 team["id"] = 15;
@@ -881,6 +895,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "IP.svg";
 team["name"] = "Indiana Pacers";
 team["conference"] = "Eastern";
 team["id"] = 16;
@@ -940,6 +955,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "WW.svg";
 team["name"] = "Washington Wizards";
 team["conference"] = "Eastern";
 team["id"] = 17;
@@ -999,6 +1015,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "MB.svg";
 team["name"] = "Milwaukee Bucks";
 team["conference"] = "Eastern";
 team["id"] = 18;
@@ -1052,6 +1069,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "DM.svg";
 team["name"] = "Dallas Mavericks";
 team["conference"] = "Western";
 team["id"] = 19;
@@ -1105,6 +1123,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "DN.svg";
 team["name"] = "Denver Nuggets";
 team["conference"] = "Western";
 team["id"] = 20;
@@ -1158,6 +1177,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "HR.svg";
 team["name"] = "Houston Rockets";
 team["conference"] = "Western";
 team["id"] = 21;
@@ -1223,6 +1243,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "MT.svg";
 team["name"] = "Minnesota Timberwolves";
 team["conference"] = "Western";
 team["id"] = 22;
@@ -1282,6 +1303,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "MG.svg";
 team["name"] = "Memphis Grizzlies";
 team["conference"] = "Western";
 team["id"] = 23;
@@ -1341,6 +1363,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "OCT.svg";
 team["name"] = "Oklahoma City Thunder";
 team["conference"] = "Western";
 team["id"] = 24;
@@ -1394,6 +1417,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "NOP.svg";
 team["name"] = "New Orleans Pelicans";
 team["conference"] = "Western";
 team["id"] = 25;
@@ -1447,6 +1471,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "PTB.svg";
 team["name"] = "Portland Trail Blazers";
 team["conference"] = "Western";
 team["id"] = 26;
@@ -1500,6 +1525,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "PS.svg";
 team["name"] = "Phoenix Suns";
 team["conference"] = "Western";
 team["id"] = 27;
@@ -1553,6 +1579,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "SAS.svg";
 team["name"] = "San Antonio Spurs";
 team["conference"] = "Western";
 team["id"] = 28;
@@ -1612,6 +1639,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "UJ.svg";
 team["name"] = "Utah Jazz";
 team["conference"] = "Western";
 team["id"] = 29;
@@ -1677,6 +1705,7 @@ team["games"] = [
 teams.push(team);
 
 team = {};
+team["logo"] = "SK.svg";
 team["name"] = "Sacramento Kings";
 team["conference"] = "Western";
 team["id"] = 30;
@@ -1729,25 +1758,12 @@ team["games"] = [
 ];
 teams.push(team);
 
-function calculatePCT() {
-  teams.forEach((team) => {
-    team.PCT = ((team.W / (team.W + team.L)) * 100).toFixed(1);
-  });
+
+
+
+if (localStorage.getItem("teams")) {
+  console.log("teams already in local storage");
+} else {
+  localStorage.setItem("teams", JSON.stringify(teams));
 }
 
-calculatePCT();
-
-function calculateRank(teams, conf) {
-  let t = teams.filter((team) => team.conference === conf);
-  t.sort((a, b) => {
-    return b.PCT - a.PCT;
-  });
-  for (let i = 0; i < t.length; i++) {
-    t[i].rank = i + 1;
-  }
-}
-
-calculateRank(teams, "Western");
-calculateRank(teams, "Eastern");
-
-localStorage.setItem("teams", JSON.stringify(teams));

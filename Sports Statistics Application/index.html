@@ -151,6 +151,8 @@
   <script>
     function start() {
       navbarStart();
+      const teams = JSON.parse(localStorage.getItem("teams"));
+
       createTable(teams, "Eastern");
       createTable(teams, "Western");
     }

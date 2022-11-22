@@ -1,6 +1,8 @@
 function storeGame() {
   const teams = JSON.parse(localStorage.getItem("teams"));
 
+  formValidation()
+
   let homeTeamId = parseInt(document.getElementById("homeTeam").value);
   let homeTeam = teams.find((team) => team.id === homeTeamId);
   let awayTeamId = parseInt(document.getElementById("awayTeam").value);
@@ -10,6 +12,7 @@ function storeGame() {
   let awayTeamScore = document.getElementById("awayTeamScore").value;
 
   const gameDate = new Date(document.getElementById("gameDate").value);
+
 
   if (homeTeamScore > awayTeamScore) {
     homeTeam.W++;
@@ -36,6 +39,24 @@ function storeGame() {
   awayTeam.games.push(awayGame);
 
   localStorage.setItem("teams", JSON.stringify(teams));
+}
+
+function formValidation() {
+  if (homeTeam.name.value === "" || awayTeam.name.value === "") {
+    let article = document.createElement("article")
+    article.classList.add("message")
+    let divHead = document.createElement("div")
+    divHead.classList.add("message-header")
+    article.append("divHead")
+    let pHead = document.createElement("p")
+    pHead.textContent = "Error"
+    divHead.append("pHead")
+    let divBody = document.createElement("div")
+    divBody.classList.add("message-body")
+    divBody.textContent = "Please fill in all required fields"
+    article.append("divBody")
+  }
+
 }
 
 function calculateHomeWinsLosses(games) {
@@ -68,6 +89,16 @@ function calculateRoadWinsLosses(games) {
   return `${wins} - ${losses}`;
 }
 
+function calculateRank(teams, conf) {
+  let t = teams.filter((team) => team.conference === conf);
+  t.sort((a, b) => {
+    return b.PCT - a.PCT;
+  });
+  for (let i = 0; i < t.length; i++) {
+    t[i].rank = i + 1;
+  }
+}
+
 function createTable(teams, conference) {
   let tableBody =
     conference === "Eastern"
@@ -80,6 +111,16 @@ function createTable(teams, conference) {
       return;
     }
 
+    function calculatePCT() {
+      teams.forEach((team) => {
+        team.PCT = ((team.W / (team.W + team.L)) * 100).toFixed(1);
+      });
+    }
+
+    calculatePCT();
+    calculateRank(teams, "Western");
+    calculateRank(teams, "Eastern");
+
     const row = document.createElement("tr");
     let coll = document.createElement("td");
     let link = document.createElement("a");
@@ -87,7 +128,7 @@ function createTable(teams, conference) {
     link.append(img)
     img.src = `./images/${team.logo}`
     link.href = "./teams.html?id=" + team.id;
-    link.classList.add("image", "is-64x64")
+    link.classList.add("image", "is-48x48")
     coll.appendChild(link);
     row.appendChild(coll);
 
