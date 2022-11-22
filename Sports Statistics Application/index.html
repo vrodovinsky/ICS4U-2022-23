@@ -77,53 +77,72 @@
       </div>
     </nav>
     <!-- add table with headers, rest is done in javascript-->
-    <div class="container mt-4">
-      <table id="Estandings" class="table is-striped is-hoverable is-fullwidth">
-        <thead>
-          <th class="has-background-link has-text-white">Eastern Conference</th>
-          <th class="has-background-link has-text-white"></th>
-          <th class="has-background-link has-text-white"></th>
-          <th class="has-background-link has-text-white"></th>
-          <th class="has-background-link has-text-white"></th>
-          <th class="has-background-link has-text-white"></th>
-          <th class="has-background-link has-text-white"></th>
-          <tr>
-            <th></th>
-            <th onclick="createTable(sort('rank'), 'Eastern');">Rank</th>
-            <th onclick="createTable(sort('name'), 'Eastern');">Name</th>
-            <th onclick="createTable(sort('W'), 'Eastern');">Wins</th>
-            <th onclick="createTable(sort('L'), 'Eastern');">Losses</th>
-            <th onclick="createTable(sort('PCT'), 'Eastern')">PCT</th>
-            <th>Home</th>
-            <th>Road</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-    <div class="container mt-4">
-      <table id="Wstandings" class="table is-striped is-hoverable is-fullwidth">
-        <thead>
-          <th class="has-background-link has-text-white">Western Conference</th>
-          <th class="has-background-link has-text-white"></th>
-          <th class="has-background-link has-text-white"></th>
-          <th class="has-background-link has-text-white"></th>
-          <th class="has-background-link has-text-white"></th>
-          <th class="has-background-link has-text-white"></th>
-          <th class="has-background-link has-text-white"></th>
+    <div class="columns">
+      <div class="column is-one-third">
+        <div class="container mt-4 ml-5">
+          <table
+            id="Estandings"
+            class="table is-striped is-hoverable is-fullwidth"
+          >
+            <thead>
+              <th class="has-background-link has-text-white">
+                Eastern Conference
+              </th>
+              <th class="has-background-link has-text-white"></th>
+              <th class="has-background-link has-text-white"></th>
+              <th class="has-background-link has-text-white"></th>
+              <th class="has-background-link has-text-white"></th>
+              <th class="has-background-link has-text-white"></th>
+              <th class="has-background-link has-text-white"></th>
+              <th class="has-background-link has-text-white"></th>
+              <tr>
+                <th class="is-narrow"></th>
+                <th onclick="createTable(sort('rank'), 'Eastern');">Rank</th>
+                <th onclick="createTable(sort('name'), 'Eastern');">Name</th>
+                <th onclick="createTable(sort('W'), 'Eastern');">Wins</th>
+                <th onclick="createTable(sort('L'), 'Eastern');">Losses</th>
+                <th onclick="createTable(sort('PCT'), 'Eastern')">PCT</th>
+                <th>Home</th>
+                <th>Road</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="column is-one-third is-offset-one-fifth">
+        <div class="container mt-4">
+          <table
+            id="Wstandings"
+            class="table is-striped is-hoverable is-fullwidth"
+          >
+            <thead>
+              <th class="has-background-link has-text-white">
+                Western Conference
+              </th>
+              <th class="has-background-link has-text-white"></th>
+              <th class="has-background-link has-text-white"></th>
+              <th class="has-background-link has-text-white"></th>
+              <th class="has-background-link has-text-white"></th>
+              <th class="has-background-link has-text-white"></th>
+              <th class="has-background-link has-text-white"></th>
+              <th class="has-background-link has-text-white"></th>
 
-          <tr>
-            <th onclick="createTable(sort('rank'), 'Western');">Rank</th>
-            <th onclick="createTable(sort('name'), 'Western');">Name</th>
-            <th onclick="createTable(sort('W'), 'Western');">Wins</th>
-            <th onclick="createTable(sort('L'), 'Western');">Losses</th>
-            <th onclick="createTable(sort('PCT'),'Western')">PCT</th>
-            <th>Home</th>
-            <th>Road</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+              <tr>
+                <th class="is-narrow"></th>
+                <th onclick="createTable(sort('rank'), 'Western');">Rank</th>
+                <th onclick="createTable(sort('name'), 'Western');">Name</th>
+                <th onclick="createTable(sort('W'), 'Western');">Wins</th>
+                <th onclick="createTable(sort('L'), 'Western');">Losses</th>
+                <th onclick="createTable(sort('PCT'),'Western')">PCT</th>
+                <th>Home</th>
+                <th>Road</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </body>
   <script src="./JS/script.js"></script>

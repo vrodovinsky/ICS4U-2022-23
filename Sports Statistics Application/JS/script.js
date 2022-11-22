@@ -79,12 +79,15 @@ function createTable(teams, conference) {
     if (team.conference != conference) {
       return;
     }
+
     const row = document.createElement("tr");
     let coll = document.createElement("td");
     let link = document.createElement("a");
     let img = document.createElement("img")
-    img.src = `./images/ ${team.logo}`
+    link.append(img)
+    img.src = `./images/${team.logo}`
     link.href = "./teams.html?id=" + team.id;
+    link.classList.add("image", "is-64x64")
     coll.appendChild(link);
     row.appendChild(coll);
 
