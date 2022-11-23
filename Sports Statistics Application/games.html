@@ -82,7 +82,7 @@
         <input
           class="input is-justify-content-space-between is-link"
           type="date"
-          id="date"
+          id="gameDate"
         />
         <button
           class="button is-justify-content-space-between is-link is-outlined"
@@ -106,6 +106,7 @@
   <script>
     function start() {
       navbarStart();
+      document.getElementById("gameDate").valueAsDate = new Date();
     }
   </script>
 </html>
