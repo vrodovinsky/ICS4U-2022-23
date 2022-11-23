@@ -293,9 +293,9 @@ function getGamesByDate(page) {
 
   const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-  let date = new Date(document.getElementById("date").value);
+  let date = new Date(document.getElementById("gameDate").value);
   let monthName = month[date.getMonth()];
-  let nameDate = `${monthName} ${date.getDate()}, ${date.getFullYear()}`
+  let nameDate = `${monthName} ${date.getDate() + 1}, ${date.getFullYear()}`
   let totalGames = 0
   let count = 0
 
@@ -329,6 +329,24 @@ function getGamesByDate(page) {
       }
     });
   });
+
+  if (totalGames === 0) {
+    while (gameDate.firstChild) {
+      gameDate.removeChild(gameDate.firstChild);
+    }
+
+    hero = document.createElement("section")
+    hero.classList.add("hero")
+    heroBody = document.createElement("div")
+    heroBody.classList.add("hero-body")
+    hero.append(heroBody)
+    p = document.createElement("p")
+    p.classList.add("title", "has-text-centered", "has-text-link-dark")
+    p.textContent = `No games occured on ${nameDate}`
+    heroBody.append(p)
+    pageDate = document.getElementById("pageDate");
+    pageDate.append(hero);
+  }
 
   teams.forEach((team) => {
     team.games.forEach((game) => {
@@ -385,6 +403,7 @@ function displayButtonsByDate(gamesCount, pageSize, currentPage) {
   let ul = document.createElement("ul")
   ul.classList.add("pagination-list")
   nav.append(ul)
+
 
   for (let i = 0; i < numPages; i++) {
     let li = document.createElement("li")
@@ -447,6 +466,15 @@ function displayGame(game, team, opp) {
   cardContentOpp.classList.add("card-content");
   content.append(cardContentOpp);
 
+  let link = document.createElement("a");
+  let img = document.createElement("img")
+  img.classList.add("card-image")
+  link.append(img)
+  img.src = `./images/${team.logo}`
+  link.href = "./teams.html?id=" + team.id;
+  link.classList.add("image", "is-48x48")
+  cardContent.append(link)
+  let div = document.createElement("div")
   let homeTeam = document.createElement("p");
   homeTeam.classList.add(
     "title",
@@ -455,7 +483,9 @@ function displayGame(game, team, opp) {
     "is-justify-content-space-between", "has-text-link"
   );
   homeTeam.textContent = team.name;
-  cardContentPage.append(homeTeam);
+  div.append(link)
+  div.append(homeTeam)
+  cardContentPage.append(div);
   let homeTeamPoints = document.createElement("p");
   homeTeamPoints.classList.add(
     "title",
@@ -470,6 +500,15 @@ function displayGame(game, team, opp) {
   homeTeamScore.textContent = `${team.W} - ${team.L}`;
   cardContentPage.append(homeTeamScore);
 
+  link = document.createElement("a");
+  img = document.createElement("img")
+  img.classList.add("card-image")
+  link.append(img)
+  img.src = `./images/${opp.logo}`
+  link.href = "./teams.html?id=" + opp.id;
+  link.classList.add("image", "is-48x48")
+  div = document.createElement("div")
+  cardContent.append(link)
   let oppTeam = document.createElement("p");
   oppTeam.classList.add(
     "title",
@@ -478,7 +517,9 @@ function displayGame(game, team, opp) {
     "is-justify-content-space-between", "has-text-link"
   );
   oppTeam.textContent = game.opp;
-  cardContentOpp.append(oppTeam);
+  div.append(link)
+  div.append(oppTeam)
+  cardContentOpp.append(div);
   let oppTeamPoints = document.createElement("p");
   oppTeamPoints.classList.add(
     "title",
