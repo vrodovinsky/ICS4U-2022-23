@@ -1,15 +1,18 @@
 function storeGame() {
   const teams = JSON.parse(localStorage.getItem("teams"));
 
-  formValidation()
-
   let homeTeamId = parseInt(document.getElementById("homeTeam").value);
   let homeTeam = teams.find((team) => team.id === homeTeamId);
   let awayTeamId = parseInt(document.getElementById("awayTeam").value);
   let awayTeam = teams.find((team) => team.id === awayTeamId);
 
+
   let homeTeamScore = document.getElementById("homeTeamScore").value;
   let awayTeamScore = document.getElementById("awayTeamScore").value;
+
+  if (!formValidation(homeTeam, awayTeam, homeTeamScore, awayTeamScore)) {
+    return false
+  }
 
   const gameDate = new Date(document.getElementById("gameDate").value);
 
@@ -39,24 +42,64 @@ function storeGame() {
   awayTeam.games.push(awayGame);
 
   localStorage.setItem("teams", JSON.stringify(teams));
+
+  resetForm()
+  showMessage("Congratulations", "Your message has been succesfully saved")
+
 }
 
-function formValidation() {
-  if (homeTeam.name.value === "" || awayTeam.name.value === "") {
-    let article = document.createElement("article")
-    article.classList.add("message")
-    let divHead = document.createElement("div")
-    divHead.classList.add("message-header")
-    article.append("divHead")
-    let pHead = document.createElement("p")
-    pHead.textContent = "Error"
-    divHead.append("pHead")
-    let divBody = document.createElement("div")
-    divBody.classList.add("message-body")
-    divBody.textContent = "Please fill in all required fields"
-    article.append("divBody")
+function resetForm() {
+  let form = document.getElementById("gameForm").reset()
+
+  let homeDropdown = document.getElementById("homeTeam");
+
+  while (homeDropdown.firstChild) {
+    homeDropdown.removeChild(homeDropdown.firstChild);
   }
 
+  let awayDropdown = document.getElementById("awayTeam");
+
+  while (awayDropdown.firstChild) {
+    awayDropdown.removeChild(awayDropdown.firstChild);
+  }
+  document.getElementById("gameDate").valueAsDate = new Date();
+
+
+}
+
+function formValidation(homeTeam, awayTeam, homeTeamScore, awayTeamScore) {
+  let message = document.getElementById("message")
+
+  while (message.firstChild) {
+    message.removeChild(message.firstChild);
+  }
+
+  if (!homeTeam || !awayTeam || homeTeam.name === awayTeam.name || !homeTeamScore || homeTeamScore <= 0 || !awayTeamScore || awayTeamScore <= 0 || homeTeamScore === awayTeamScore) {
+    showMessage("Error", "Please fill in all required fields")
+    window.scrollTo(0, 0)
+
+    return false;
+  }
+  return true
+}
+
+function showMessage(header, body) {
+  let article = document.createElement("article")
+  article.classList.add("message")
+  let divHead = document.createElement("div")
+  divHead.classList.add("message-header")
+  article.append(divHead)
+  let pHead = document.createElement("p")
+  pHead.textContent = header
+  divHead.append(pHead)
+  article.append(divHead)
+  let divBody = document.createElement("div")
+  divBody.classList.add("message-body")
+  divBody.textContent = body
+  article.append(divBody)
+
+  message.append(article)
+  window.scrollTo(0, 0)
 }
 
 function calculateHomeWinsLosses(games) {
@@ -134,27 +177,34 @@ function createTable(teams, conference) {
 
     coll = document.createElement("td");
     coll.textContent = team.rank;
+    coll.classList.add("is-size-5")
     row.appendChild(coll);
     coll = document.createElement("td");
     link = document.createElement("a");
     link.textContent = team.name;
+    link.classList.add("is-size-5")
     link.href = "./teams.html?id=" + team.id;
     coll.appendChild(link);
     row.appendChild(coll);
     coll = document.createElement("td");
     coll.textContent = team.W;
+    coll.classList.add("is-size-5")
     row.appendChild(coll);
     coll = document.createElement("td");
     coll.textContent = team.L;
+    coll.classList.add("is-size-5")
     row.appendChild(coll);
     coll = document.createElement("td");
     coll.textContent = team.PCT;
+    coll.classList.add("is-size-5")
     row.appendChild(coll);
     coll = document.createElement("td");
     coll.textContent = calculateHomeWinsLosses(team.games);
+    coll.classList.add("is-size-5")
     row.appendChild(coll);
     coll = document.createElement("td");
     coll.textContent = calculateRoadWinsLosses(team.games);
+    coll.classList.add("is-size-5")
     row.appendChild(coll);
 
     tableBody.appendChild(row);
@@ -400,9 +450,19 @@ function displayButtonsByDate(gamesCount, pageSize, currentPage) {
     nav.removeChild(nav.firstChild);
   }
 
+
   let ul = document.createElement("ul")
   ul.classList.add("pagination-list")
   nav.append(ul)
+
+  let previous = document.createElement("a")
+  previous.classList.add("pagination-previous", "pagination-link")
+  previous.textContent = "Previous page"
+
+
+  let next = document.createElement("a")
+  next.classList.add("pagination-next", "pagination-link")
+  next.textContent = "Next page"
 
 
   for (let i = 0; i < numPages; i++) {
@@ -420,10 +480,20 @@ function displayButtonsByDate(gamesCount, pageSize, currentPage) {
     button.textContent = i + 1
     li.append(button)
   }
+
+  if (currentPage >= 1 && currentPage < numPages) {
+    nav.append(next)
+    next.addEventListener('click', () => { getGamesByTeam(currentPage + 1) });
+  }
+  if (currentPage > 1 && currentPage <= numPages) {
+    nav.append(previous)
+    previous.addEventListener('click', () => { getGamesByTeam(currentPage - 1) })
+  }
+
 }
 
 function displayButtonsByTeam(gamesCount, pageSize, currentPage) {
-  let numPages = gamesCount / pageSize;
+  let numPages = Math.ceil(gamesCount / pageSize);
   let nav = document.getElementById("paginator")
 
   while (nav.firstChild) {
@@ -433,6 +503,16 @@ function displayButtonsByTeam(gamesCount, pageSize, currentPage) {
   let ul = document.createElement("ul")
   ul.classList.add("pagination-list")
   nav.append(ul)
+
+  let previous = document.createElement("a")
+  previous.classList.add("pagination-previous", "pagination-link")
+  previous.textContent = "Previous page"
+
+
+  let next = document.createElement("a")
+  next.classList.add("pagination-next", "pagination-link")
+  next.textContent = "Next page"
+
 
   for (let i = 0; i < numPages; i++) {
     let li = document.createElement("li")
@@ -448,6 +528,16 @@ function displayButtonsByTeam(gamesCount, pageSize, currentPage) {
     button.textContent = i + 1
     li.append(button)
   }
+  if (currentPage >= 1 && currentPage < numPages) {
+    nav.append(next)
+    next.addEventListener('click', () => { getGamesByTeam(currentPage + 1) });
+  }
+  if (currentPage > 1 && currentPage <= numPages) {
+    nav.append(previous)
+    previous.addEventListener('click', () => { getGamesByTeam(currentPage - 1) })
+  }
+
+
 }
 
 function displayGame(game, team, opp) {
