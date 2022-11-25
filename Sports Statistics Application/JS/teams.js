@@ -390,7 +390,7 @@ team["games"] = [
   {
     home: false,
     date: "2022-10-26",
-    opp: "Milkwaukee Bucks",
+    opp: "Milwaukee Bucks",
     score: [99, 110],
   },
   {
