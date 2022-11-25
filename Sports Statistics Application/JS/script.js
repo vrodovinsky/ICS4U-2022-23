@@ -560,7 +560,7 @@ function displayGame(game, team, opp) {
   let img = document.createElement("img")
   img.classList.add("card-image")
   link.append(img)
-  img.src = `./images/${team.logo}`
+  img.src = "./images/" + team.logo
   link.href = "./teams.html?id=" + team.id;
   link.classList.add("image", "is-48x48")
   cardContent.append(link)
