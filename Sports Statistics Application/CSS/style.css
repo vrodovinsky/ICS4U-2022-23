@@ -15,19 +15,31 @@
   font-weight: 400;  
 }
 
+#allGames {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.card {
+  height: max-content;
+}
+
 @media (max-width: 1024px) {
   .pagination-previous, .pagination-next{
     display: none;
   }
 
-  #allGames{
+  #allGames, #admin-container{
     margin-left: 20px;
     margin-right: 20px;
   }
 
-  #admin-container{
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+    #statsContainer{
+      margin-left: 20px;
+        margin-right: 20px;
+    }
+
+ 
 
 }

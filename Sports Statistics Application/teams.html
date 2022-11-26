@@ -80,7 +80,10 @@
       </div>
     </section>
     <div class="container mt-2 mb-6">
-      <nav class="level has-background-link-dark p-6 has-text-white">
+      <nav
+        class="level has-background-link-dark p-6 has-text-white"
+        id="statsContainer"
+      >
         <div class="level-item has-text-centered">
           <div>
             <p class="heading">Rank</p>
@@ -108,9 +111,7 @@
       </nav>
 
       <!-- Panel of games -->
-      <div class="columns">
-        <div class="column" id="allGames"></div>
-      </div>
+      <div class="columns" id="allGames"></div>
 
       <nav id="paginator" class="pagination is-centered"></nav>
     </div>
@@ -124,6 +125,10 @@
       const dataString = localStorage.getItem("teams");
       const teams = JSON.parse(dataString);
       let params = new URL(document.location).searchParams;
+
+      teams.forEach((team) => {
+        team.PCT = ((team.W / (team.W + team.L)) * 100).toFixed(1);
+      });
 
       const id = parseInt(params.get("id"));
       const team = teams.find((team) => team.id === id);
