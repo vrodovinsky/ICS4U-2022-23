@@ -79,11 +79,8 @@
     </nav>
     <div class="container mt-2 mb-6">
       <div class="is-flex mb-3">
-        <input
-          class="input is-justify-content-space-between is-link"
-          type="date"
-          id="gameDate"
-        />
+        <input class="input is-justify-content-space-between is-link"
+        type="date" id="gameDate" max= />
         <button
           class="button is-justify-content-space-between is-link is-outlined"
           onclick="getGamesByDate(1)"
@@ -106,7 +103,10 @@
   <script>
     function start() {
       navbarStart();
-      document.getElementById("gameDate").valueAsDate = new Date();
+      const d = formatDate(new Date());
+      document.getElementById("gameDate").value = d;
+      document.getElementById("gameDate").setAttribute("max", d);
+      getGamesByDate(1);
     }
   </script>
 </html>

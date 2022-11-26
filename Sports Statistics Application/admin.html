@@ -153,7 +153,11 @@
 <script>
   function start() {
     navbarStart();
-    document.getElementById("gameDate").valueAsDate = new Date();
+
+    const d = formatDate(new Date());
+    document.getElementById("gameDate").value = d;
+    document.getElementById("gameDate").setAttribute("max", d);
+
   }
 </script>
 
