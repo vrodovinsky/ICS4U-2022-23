@@ -21,6 +21,10 @@
   gap: 30px;
 }
 
+.score{
+  width: 16em;
+}
+
 .card {
   height: max-content;
 }
@@ -35,10 +39,10 @@
     margin-right: 20px;
   }
 
-    #statsContainer{
-      margin-left: 20px;
-        margin-right: 20px;
-    }
+  #statsContainer{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 
  
 

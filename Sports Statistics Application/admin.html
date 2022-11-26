@@ -70,106 +70,114 @@
       <div class="container mt-4" id="admin-container">
         <div id="message"></div>
 
-        <div class="card has-background-link">
+        <div class="card has-background-link pb-6">
           <div class="card-content login">
             <form id="gameForm">
               <p class="title has-text-white">Add game</p>
 
-
-              <div class="field">
-                <label class="label has-text-white">Date</label>
-                <div class="control">
-                  <input class="input" type="date" id="gameDate" />
-                </div>
-              </div>
-
-              <div class="is-flex is-justify-content-space-evenly">
-                <div>
+              <div class="columns">
+                <div class="column is-1"></div>
+                <div class="column is-10">
                   <div class="field">
-                    <label class="label has-text-white">Home Team</label>
-                    <div class="control has-text-white">
-                      <input class="control" type="radio" id="Eastern-Home" name="conference-homeTeam"
-                        value="Econference" onclick="chooseConference('homeTeam')" />
-                      <label for="Eastern">Eastern Conference</label>
+                    <label class="label has-text-white">Date</label>
+                    <div class="control">
+                      <input class="input" type="date" id="gameDate" />
                     </div>
                   </div>
-                  <div class="field has-text-white">
-                    <input class="control" type="radio" id="Western-Home" name="conference-homeTeam" value="Wconference"
-                      onclick="chooseConference('homeTeam')" />
-                    <label for="Western">Western Conference</label>
-                  </div>
+                </div>
+                <div class="column is-1"></div>
+              </div>
 
-                  <div class="field mb-5">
-                    <div class="control" id="HTeam">
-                      <div class="select" id="homeTeamDiv">
-                        <select id="homeTeam">
-                          <option disabled selected value> -- Select a Conference -- </option>
-                        </select>
+              <div class="columns">
+                <div class="column is-1"></div>
+                <div class="column is-5">
+
+                  <div>
+                    <div class="field">
+                      <label class="label has-text-white">Home Team</label>
+                      <div class="control has-text-white">
+                        <input class="control" type="radio" id="Eastern-Home" name="conference-homeTeam"
+                          value="Econference" onclick="chooseConference('homeTeam')" />
+                        <label for="Eastern">Eastern</label>
+                        <input class="control ml-3" type="radio" id="Western-Home" name="conference-homeTeam"
+                          value="Wconference" onclick="chooseConference('homeTeam')" />
+                        <label for="Western">Western </label>
+                      </div>
+                    </div>
+
+                    <div class="field mb-5">
+                      <div class="control" id="HTeam">
+                        <div class="select" id="homeTeamDiv">
+                          <select id="homeTeam">
+                            <option disabled selected value> --- Select a Conference --- </option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-
-                <div class="is-flex is-justify-content-space-between">
                   <div class="field">
                     <label class="label has-text-white">Home Team Score</label>
                     <div class="control">
-                      <input class="control input" type="number" id="homeTeamScore" placeholder="Points" />
+                      <input class="control input score" type="number" id="homeTeamScore" placeholder=" Points" />
                     </div>
                   </div>
+
                 </div>
-              </div>
+                <div class="column is-1"></div>
+                <div class="column is-5">
+                  <div>
+                    <div class="field">
+                      <label class="label has-text-white">Away Team</label>
 
-
-              <div class="is-flex is-justify-content-space-evenly">
-                <div>
-                  <div class="field">
-                    <label class="label has-text-white">Away Team</label>
-                    <div class="control has-text-white">
-                      <input class="control" type="radio" id="Eastern-Away" name="conference-awayTeam"
-                        value="Econference" onclick="chooseConference('awayTeam')" />
-                      <label for="Eastern">Eastern Conference</label>
+                      <div class="control has-text-white">
+                        <input class="control" type="radio" id="Eastern-Away" name="conference-awayTeam"
+                          value="Econference" onclick="chooseConference('awayTeam')" />
+                        <label for="Eastern">Eastern</label>
+                        <input class="control ml-3" type="radio" id="Western-Away" name="conference-awayTeam"
+                          value="Wconference" onclick="chooseConference('awayTeam')" />
+                        <label for="Western">Western</label>
+                      </div>
                     </div>
-                  </div>
-                  <div class="field has-text-white">
-                    <input class="control" type="radio" id="Western-Away" name="conference-awayTeam" value="Wconference"
-                      onclick="chooseConference('awayTeam')" />
-                    <label for="Western">Western Conference</label>
-                  </div>
 
-                  <div class="field">
-                    <div class="control" id="ATeam">
-                      <div class="select" id="awayTeamDiv">
-                        <select id="awayTeam">
-                          <option disabled selected value> -- Select a Conference -- </option>
-                        </select>
+                    <div class="field mb-5">
+                      <div class="control" id="ATeam">
+                        <div class="select" id="awayTeamDiv">
+                          <select id="awayTeam">
+                            <option disabled selected value> --- Select a Conference --- </option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="is-flex is-justify-content-space-between">
+
+
                   <div class="field">
                     <label class="label has-text-white">Away Team Score</label>
                     <div class="control">
-                      <input class="control input" type="number" id="awayTeamScore" placeholder="Points" />
+                      <input class="control input score" type="number" id="awayTeamScore" placeholder="Points" />
                     </div>
                   </div>
+
                 </div>
               </div>
 
-              <div class="has-text-centered mt-4">
-                <button onclick="storeGame(); return false" class="button has-background-link has-text-white mt-4">
-                  Submit
-                </button>
-              </div>
-            </form>
+
+
           </div>
+
+          <div class="has-text-centered mt-4">
+            <button onclick="storeGame(); return false" class="button has-background-link has-text-white mt-4">
+              Submit
+            </button>
+          </div>
+          </form>
         </div>
       </div>
     </div>
-    <div class="column is-2"></div>
+  </div>
+  <div class="column is-2"></div>
   </div>
 </body>
 <script src="./JS/script.js"></script>
