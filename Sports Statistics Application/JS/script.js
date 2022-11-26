@@ -228,13 +228,10 @@ function createTable(teams, conference) {
       return;
     }
 
-    function calculatePCT() {
-      teams.forEach((team) => {
-        team.PCT = ((team.W / (team.W + team.L)) * 100).toFixed(1);
-      });
-    }
+    teams.forEach((team) => {
+      team.PCT = ((team.W / (team.W + team.L)) * 100).toFixed(1);
+    });
 
-    calculatePCT();
     calculateRank(teams, "Western");
     calculateRank(teams, "Eastern");
 
@@ -412,14 +409,13 @@ function navbarStart() {
 }
 
 function getGamesByDate(page) {
-  const PAGE_SIZE = 3;
+  const PAGE_SIZE = 4;
   const teams = JSON.parse(localStorage.getItem("teams"));
 
   const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-  let date = new Date(document.getElementById("gameDate").value);
-  let dateGames = formatDate(date)
-  let nameDate = `${month[date.getUTCMonth()]} ${date.getUTCDate()}, ${date.getUTCFullYear()}`
+  let date = document.getElementById("gameDate").value;
+  let nameDate = month[date.substring(5, 7) - 1] + " " + date.substring(8) + ", " + date.substring(0, 4)
   let totalGames = 0
   let count = 0
 
@@ -449,7 +445,7 @@ function getGamesByDate(page) {
   teams.forEach((team) => {
     team.games.forEach((game) => {
 
-      if (game.date === dateGames && game.home) {
+      if (game.date === date && game.home) {
         totalGames++
       }
     });
@@ -477,7 +473,7 @@ function getGamesByDate(page) {
 
   teams.forEach((team) => {
     team.games.forEach((game) => {
-      if (game.date === dateGames && game.home) {
+      if (game.date === date && game.home) {
         const opp = teams.find((team) => team.name === game.opp);
         if (count >= (page - 1) * PAGE_SIZE && count < page * PAGE_SIZE) {
           displayGame(game, team, opp);
@@ -490,7 +486,7 @@ function getGamesByDate(page) {
 }
 
 function getGamesByTeam(page) {
-  const PAGE_SIZE = 3;
+  const PAGE_SIZE = 4;
   const dataString = localStorage.getItem("teams");
   const teams = JSON.parse(dataString);
   let params = new URL(document.location).searchParams;
