@@ -1,3 +1,15 @@
+function padTo2Digits(num) {
+  return num.toString().padStart(2, '0');
+}
+
+function formatDate(date) {
+  return [
+    date.getFullYear(),
+    padTo2Digits(date.getMonth() + 1),
+    padTo2Digits(date.getDate()),
+  ].join('-');
+}
+
 function storeGame() {
   const teams = JSON.parse(localStorage.getItem("teams"));
 
@@ -14,7 +26,9 @@ function storeGame() {
     return false
   }
 
-  const gameDate = new Date(document.getElementById("gameDate").value);
+  let date = new Date(document.getElementById("gameDate").value);
+  let gameDate = formatDate(date)
+
 
 
   if (homeTeamScore > awayTeamScore) {
@@ -44,7 +58,7 @@ function storeGame() {
   localStorage.setItem("teams", JSON.stringify(teams));
 
   resetForm()
-  showMessage("Congratulations", "Your message has been succesfully saved")
+  showMessage("Congratulations", "Your game has been succesfully saved", "is-primary")
 
 }
 
@@ -62,7 +76,9 @@ function resetForm() {
   while (awayDropdown.firstChild) {
     awayDropdown.removeChild(awayDropdown.firstChild);
   }
+
   document.getElementById("gameDate").valueAsDate = new Date();
+
 
 
 }
@@ -74,8 +90,65 @@ function formValidation(homeTeam, awayTeam, homeTeamScore, awayTeamScore) {
     message.removeChild(message.firstChild);
   }
 
-  if (!homeTeam || !awayTeam || homeTeam.name === awayTeam.name || !homeTeamScore || homeTeamScore <= 0 || !awayTeamScore || awayTeamScore <= 0 || homeTeamScore === awayTeamScore) {
-    showMessage("Error", "Please fill in all required fields")
+  if (!homeTeam) {
+    showMessage("Error", "Please select a home team", "is-danger")
+    window.scrollTo(0, 0)
+
+    return false;
+  }
+
+  if (!awayTeam) {
+    showMessage("Error", "Please select an away team", "is-danger")
+    window.scrollTo(0, 0)
+
+    return false;
+  }
+
+  if (homeTeam.name === awayTeam.name) {
+    showMessage("Error", "Home team and away team cannot be the same", "is-danger")
+    window.scrollTo(0, 0)
+
+    return false;
+  }
+
+  if (homeTeam.name === awayTeam.name) {
+    showMessage("Error", "Home team and away team cannot be the same", "is-danger")
+    window.scrollTo(0, 0)
+
+    return false;
+  }
+
+  if (!homeTeamScore) {
+    showMessage("Error", "Please input a score for the home team", "is-danger")
+    window.scrollTo(0, 0)
+
+    return false;
+  }
+
+
+  if (homeTeamScore <= 0) {
+    showMessage("Error", "Home team score has to be greater than 0", "is-danger")
+    window.scrollTo(0, 0)
+
+    return false;
+  }
+
+  if (!awayTeamScore) {
+    showMessage("Error", "Please input a score for the away team", "is-danger")
+    window.scrollTo(0, 0)
+
+    return false;
+  }
+
+  if (awayTeamScore <= 0) {
+    showMessage("Error", "Away team score has to be greater than 0", "is-danger")
+    window.scrollTo(0, 0)
+
+    return false;
+  }
+
+  if (homeTeamScore === awayTeamScore) {
+    showMessage("Error", "Home team score and away team score cannot be equal", "is-danger")
     window.scrollTo(0, 0)
 
     return false;
@@ -83,9 +156,9 @@ function formValidation(homeTeam, awayTeam, homeTeamScore, awayTeamScore) {
   return true
 }
 
-function showMessage(header, body) {
+function showMessage(header, body, colour) {
   let article = document.createElement("article")
-  article.classList.add("message")
+  article.classList.add("message", colour, "mb-5")
   let divHead = document.createElement("div")
   divHead.classList.add("message-header")
   article.append(divHead)
@@ -99,6 +172,7 @@ function showMessage(header, body) {
   article.append(divBody)
 
   message.append(article)
+
   window.scrollTo(0, 0)
 }
 
@@ -344,8 +418,8 @@ function getGamesByDate(page) {
   const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
   let date = new Date(document.getElementById("gameDate").value);
-  let monthName = month[date.getMonth()];
-  let nameDate = `${monthName} ${date.getDate() + 1}, ${date.getFullYear()}`
+  let dateGames = formatDate(date)
+  let nameDate = `${month[date.getUTCMonth()]} ${date.getUTCDate()}, ${date.getUTCFullYear()}`
   let totalGames = 0
   let count = 0
 
@@ -374,11 +448,14 @@ function getGamesByDate(page) {
 
   teams.forEach((team) => {
     team.games.forEach((game) => {
-      if (new Date(game.date).getTime() === date.getTime() && game.home) {
+
+      if (game.date === dateGames && game.home) {
         totalGames++
       }
     });
   });
+
+
 
   if (totalGames === 0) {
     while (gameDate.firstChild) {
@@ -400,7 +477,7 @@ function getGamesByDate(page) {
 
   teams.forEach((team) => {
     team.games.forEach((game) => {
-      if (new Date(game.date).getTime() === date.getTime() && game.home) {
+      if (game.date === dateGames && game.home) {
         const opp = teams.find((team) => team.name === game.opp);
         if (count >= (page - 1) * PAGE_SIZE && count < page * PAGE_SIZE) {
           displayGame(game, team, opp);
@@ -483,11 +560,11 @@ function displayButtonsByDate(gamesCount, pageSize, currentPage) {
 
   if (currentPage >= 1 && currentPage < numPages) {
     nav.append(next)
-    next.addEventListener('click', () => { getGamesByTeam(currentPage + 1) });
+    next.addEventListener('click', () => { getGamesByDate(currentPage + 1) });
   }
   if (currentPage > 1 && currentPage <= numPages) {
     nav.append(previous)
-    previous.addEventListener('click', () => { getGamesByTeam(currentPage - 1) })
+    previous.addEventListener('click', () => { getGamesByDate(currentPage - 1) })
   }
 
 }
