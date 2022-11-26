@@ -19,4 +19,15 @@
   .pagination-previous, .pagination-next{
     display: none;
   }
+
+  #allGames{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  #admin-container{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
 }
