@@ -28,6 +28,8 @@ function storeGame() {
 
   let date = new Date(document.getElementById("gameDate").value);
   let gameDate = formatDate(date)
+  let day = parseInt(gameDate.substring(8)) + 1
+  gameDate = gameDate.substring(0, 8) + day
 
 
 
@@ -516,13 +518,12 @@ function getGamesByTeam(page) {
 }
 
 function displayButtonsByDate(gamesCount, pageSize, currentPage) {
-  let numPages = gamesCount / pageSize;
+  let numPages = Math.ceil(gamesCount / pageSize);
   let nav = document.getElementById("paginator")
 
   while (nav.firstChild) {
     nav.removeChild(nav.firstChild);
   }
-
 
   let ul = document.createElement("ul")
   ul.classList.add("pagination-list")
@@ -548,12 +549,10 @@ function displayButtonsByDate(gamesCount, pageSize, currentPage) {
     } else {
       button.classList.add("pagination-link")
     }
-
     button.addEventListener('click', () => { getGamesByDate(i + 1) })
     button.textContent = i + 1
     li.append(button)
   }
-
   if (currentPage >= 1 && currentPage < numPages) {
     nav.append(next)
     next.addEventListener('click', () => { getGamesByDate(currentPage + 1) });
@@ -562,6 +561,7 @@ function displayButtonsByDate(gamesCount, pageSize, currentPage) {
     nav.append(previous)
     previous.addEventListener('click', () => { getGamesByDate(currentPage - 1) })
   }
+
 
 }
 
