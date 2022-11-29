@@ -535,6 +535,10 @@ function getGamesByTeam(page) {
 // displays buttons for games by date
 function displayButtonsByDate(gamesCount, pageSize, currentPage) {
   let numPages = Math.ceil(gamesCount / pageSize);
+
+  if (numPages === 1) {
+    return
+  }
   let nav = document.getElementById("paginator")
 
   while (nav.firstChild) {
@@ -584,6 +588,11 @@ function displayButtonsByDate(gamesCount, pageSize, currentPage) {
 // displays buttons for games by team
 function displayButtonsByTeam(gamesCount, pageSize, currentPage) {
   let numPages = Math.ceil(gamesCount / pageSize);
+
+  if (numPages === 1) {
+    return
+  }
+
   let nav = document.getElementById("paginator")
 
   while (nav.firstChild) {
