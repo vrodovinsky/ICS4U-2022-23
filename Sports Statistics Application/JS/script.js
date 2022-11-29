@@ -1,7 +1,9 @@
+//makes number 2 digits
 function padTo2Digits(num) {
   return num.toString().padStart(2, '0');
 }
 
+// formats date to yyyy-mm-dd format
 function formatDate(date) {
   return [
     date.getFullYear(),
@@ -10,6 +12,7 @@ function formatDate(date) {
   ].join('-');
 }
 
+// grabs data from submitted form and stores into local storage
 function storeGame() {
   const teams = JSON.parse(localStorage.getItem("teams"));
 
@@ -64,6 +67,7 @@ function storeGame() {
 
 }
 
+// resets the form after submission
 function resetForm() {
   let form = document.getElementById("gameForm").reset()
 
@@ -85,6 +89,7 @@ function resetForm() {
 
 }
 
+// validates the form to make sure all the inputted values are agreeable
 function formValidation(homeTeam, awayTeam, homeTeamScore, awayTeamScore) {
   let message = document.getElementById("message")
 
@@ -158,6 +163,7 @@ function formValidation(homeTeam, awayTeam, homeTeamScore, awayTeamScore) {
   return true
 }
 
+// shows validation message after form is submitted
 function showMessage(header, body, colour) {
   let article = document.createElement("article")
   article.classList.add("message", colour, "mb-5")
@@ -178,6 +184,7 @@ function showMessage(header, body, colour) {
   window.scrollTo(0, 0)
 }
 
+// calculates wins and losses for the home games
 function calculateHomeWinsLosses(games) {
   let wins = 0;
   let losses = 0;
@@ -193,6 +200,7 @@ function calculateHomeWinsLosses(games) {
   return `${wins} - ${losses}`;
 }
 
+// calculates wins and losses for the away games
 function calculateRoadWinsLosses(games) {
   let wins = 0;
   let losses = 0;
@@ -208,6 +216,7 @@ function calculateRoadWinsLosses(games) {
   return `${wins} - ${losses}`;
 }
 
+// calculates rank for a team
 function calculateRank(teams, conf) {
   let t = teams.filter((team) => team.conference === conf);
   t.sort((a, b) => {
@@ -218,6 +227,7 @@ function calculateRank(teams, conf) {
   }
 }
 
+// creates standings tables
 function createTable(teams, conference) {
   let tableBody =
     conference === "Eastern"
@@ -293,6 +303,7 @@ const standingSortOrder = {
   rank: "",
 };
 
+// sorts different columns in standings table
 function sort(field, conference) {
   if (standingSortOrder[field] === "") {
     standingSortOrder[field] = "ASC";
@@ -345,6 +356,7 @@ function sort(field, conference) {
   return teams;
 }
 
+// gets correct teams in a conference for dropdown on admin page
 function chooseConference(dropdownId) {
   let dropdown = document.getElementById(dropdownId);
 
@@ -375,6 +387,7 @@ function chooseConference(dropdownId) {
   });
 }
 
+// navbar javascript onload for a page
 function navbarStart() {
   let teams = localStorage.getItem("teams");
   teams = JSON.parse(teams);
@@ -410,6 +423,7 @@ function navbarStart() {
   });
 }
 
+// gets games by date
 function getGamesByDate(page) {
   const PAGE_SIZE = 4;
   const teams = JSON.parse(localStorage.getItem("teams"));
@@ -487,6 +501,7 @@ function getGamesByDate(page) {
   displayButtonsByDate(totalGames, PAGE_SIZE, page)
 }
 
+// gets games by team
 function getGamesByTeam(page) {
   const PAGE_SIZE = 4;
   const dataString = localStorage.getItem("teams");
@@ -517,6 +532,7 @@ function getGamesByTeam(page) {
   displayButtonsByTeam(totalGames, PAGE_SIZE, page)
 }
 
+// displays buttons for games by date
 function displayButtonsByDate(gamesCount, pageSize, currentPage) {
   let numPages = Math.ceil(gamesCount / pageSize);
   let nav = document.getElementById("paginator")
@@ -565,6 +581,7 @@ function displayButtonsByDate(gamesCount, pageSize, currentPage) {
 
 }
 
+// displays buttons for games by team
 function displayButtonsByTeam(gamesCount, pageSize, currentPage) {
   let numPages = Math.ceil(gamesCount / pageSize);
   let nav = document.getElementById("paginator")
@@ -613,6 +630,7 @@ function displayButtonsByTeam(gamesCount, pageSize, currentPage) {
 
 }
 
+// creates cards for games
 function displayGame(game, team, opp) {
   let card = document.createElement("div");
   card.classList.add("card", "mb-3", "has-background-link-light");
@@ -701,6 +719,7 @@ function displayGame(game, team, opp) {
   games.append(card);
 }
 
+// makes navbar hamburger responsive
 document.addEventListener("DOMContentLoaded", () => {
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(
