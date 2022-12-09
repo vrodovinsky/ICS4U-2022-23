@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Message</title>
+</head>
+
+<body>
+    <div>
+        <label for="phone">Phone Number (+1xxxxxxxxxx):</label>
+        <input type="tel" id="phone">
+    </div>
+
+    <div>
+        <label for="message">Message:</label>
+        <textarea name="" id="message" cols="30" rows="10"></textarea>
+    </div>
+
+    <div>
+        <button id="button" onclick="sendSMS()">Submit</button>
+    </div>
+
+
+</body>
+
+<script>
+
+    // function sendSMS() {
+    //     let phoneNum = document.getElementById("phone").value
+    //     let message = document.getElementById("message").value
+
+    //     const data = {
+    //         To: phoneNum,
+    //         From: "+18059181615",
+    //         Body: message
+    //     }
+
+    //     const credentials = btoa("AC63ec4771c4421bfd774e6117b0399c51:5131e6b61d1de46aa0068a992c2a087a")
+    //     const headers = {
+    //         "Authorization": `Basic ${credentials}`,
+    //         "Content-type": "application/x-www-form-urlencoded"
+    //     }
+
+    //     fetch('https://api.twilio.com/2010-04-01/Accounts/AC63ec4771c4421bfd774e6117b0399c51/Messages.json', {
+    //         method: "POST",
+    //         body: data,
+    //         headers: headers
+    //     })
+    //         .then((res) => res.json())
+    //         .then((result) => console.log(result))
+    //         .catch((err) => console.log(err))
+
+    // }
+
+    async function sendSMS() {
+        let phoneNum = document.getElementById("phone").value
+        let message = document.getElementById("message").value
+
+        let myHeaders = new Headers();
+        const credentials = btoa("AC63ec4771c4421bfd774e6117b0399c51:5131e6b61d1de46aa0068a992c2a087a")
+        myHeaders.append("Authorization", `Basic ${credentials}`);
+        myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+        let urlencoded = new URLSearchParams();
+        urlencoded.append("To", phoneNum);
+        urlencoded.append("From", "+18059181615");
+        urlencoded.append("Body", message);
+
+        let requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: urlencoded,
+            redirect: 'follow'
+        };
+
+        fetch("https://api.twilio.com/2010-04-01/Accounts/AC63ec4771c4421bfd774e6117b0399c51/Messages.json", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+
+    }
+
+</script>
+
+</html>
