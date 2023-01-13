@@ -83,6 +83,17 @@ public class IntLinkedList {
         }
     }
 
+    public Integer removeFront(Integer data) {
+        if (head == null)
+            return null;
+        else {
+            Integer temp = head.getData();
+            head = head.getLink();
+            return temp;
+        }
+
+    }
+
     public String toString() {
         String result = "{";
         IntNode curr = head;
