@@ -26,6 +26,17 @@ public class IntLinkedList {
         return true;
     }
 
+    public Integer removeFront() {
+        if (head == null)
+            return null;
+        else {
+            Integer temp = head.getData();
+            head = head.getLink();
+            manyItems--;
+            return temp;
+        }
+    }
+
     public boolean addFront(Integer data) {
         head = new IntNode(data, head);
         manyItems++;
@@ -83,17 +94,6 @@ public class IntLinkedList {
         }
     }
 
-    public Integer removeFront(Integer data) {
-        if (head == null)
-            return null;
-        else {
-            Integer temp = head.getData();
-            head = head.getLink();
-            return temp;
-        }
-
-    }
-
     public String toString() {
         String result = "{";
         IntNode curr = head;
@@ -109,5 +109,23 @@ public class IntLinkedList {
         result += "}";
 
         return result;
+    }
+
+    public Integer get(int index) {
+        if (index < 0)
+            throw new IndexOutOfBoundsException("Invalid index " + index + " must be greater than 0");
+
+        if (head == null)
+            throw new IllegalStateException("Can't get an element from an empty list.");
+        else if (index > size()) {
+            throw new IndexOutOfBoundsException("Invalid index " + index + " max index is " + (size() - 1));
+        } else {
+            IntNode curr = head;
+            for (int i = 0; i < index; i++) {
+                curr = curr.getLink();
+            }
+
+            return curr.getData();
+        }
     }
 }
