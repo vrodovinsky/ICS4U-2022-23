@@ -1,4 +1,4 @@
-public class TestIntLLQueue {
+public class TestArrayQueue {
     public static void main(String[] args) {
         int testPassed = 0;
         int testFailed = 0;
@@ -40,51 +40,51 @@ public class TestIntLLQueue {
         System.out.println("Tests Passed: " + testPassed + ". Tests Failed: " + testFailed);
     }
 
-    private static IntLLQueue prepareLinkedList() {
-        IntLLQueue list = new IntLLQueue();
-        list.enqueue(1);
-        list.enqueue(2);
-        list.enqueue(3);
-        list.enqueue(4);
-        list.enqueue(5);
+    private static IntArrayQueue prepareArray() {
+        IntArrayQueue arr = new IntArrayQueue();
+        arr.enqueue(1);
+        arr.enqueue(2);
+        arr.enqueue(3);
+        arr.enqueue(4);
+        arr.enqueue(5);
 
-        return list;
+        return arr;
     }
 
     private static boolean testEnqueue() {
-        IntLLQueue list = prepareLinkedList();
+        IntArrayQueue arr = prepareArray();
 
-        return list.peek().equals(1);
+        return arr.peek().equals(1);
     }
 
     private static boolean testDequeue() {
-        IntLLQueue list = prepareLinkedList();
+        IntArrayQueue arr = prepareArray();
 
-        list.dequeue();
-        list.dequeue();
-        list.dequeue();
-        list.dequeue();
+        arr.dequeue();
+        arr.dequeue();
+        arr.dequeue();
+        arr.dequeue();
 
-        return list.peek().equals(5);
+        return arr.peek().equals(1);
     }
 
     private static boolean testPeek() {
-        IntLLQueue list = prepareLinkedList();
-        return list.peek().equals(1);
+        IntArrayQueue arr = prepareArray();
+        return arr.peek().equals(1);
     }
 
     private static boolean testClear() {
-        IntLLQueue list = prepareLinkedList();
+        IntArrayQueue arr = prepareArray();
 
-        list.clear();
+        arr.clear();
 
-        return list.isEmpty();
+        return arr.isEmpty();
     }
 
     private static boolean testIsEmpty() {
-        IntLLQueue list = prepareLinkedList();
+        IntArrayQueue arr = prepareArray();
 
-        return !list.isEmpty();
+        return !arr.isEmpty();
 
     }
 
