@@ -19,7 +19,7 @@ public class IntArrayStack {
             data = temp;
         }
 
-        data[top++] = el;
+        data[++top] = el;
     }
 
     public Integer pop() {
@@ -40,9 +40,15 @@ public class IntArrayStack {
     }
 
     public int search(Integer num) {
+        if (num == null)
+            return -1;
+
         int i = 0;
-        while (data[i] != num) {
-            i++;
+        while (!data[i].equals(num)) {
+            if (i == top)
+                return -1;
+            else
+                i++;
         }
 
         return i;
