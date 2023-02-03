@@ -7,7 +7,7 @@ const app = Vue.createApp({
          brand: 'Vue Mastery',
          details: ['50% cotton', '30% wool', '20% polyester'],
          variants: [
-            { id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 50, onSale: true },
+            { id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 50, onSale: false },
             { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg', quantity: 0, onSale: false },
          ]
       }
@@ -31,7 +31,7 @@ const app = Vue.createApp({
          return this.variants[this.selectedVariant].quantity
       },
       onSale() {
-         return this.variants[this.selectedVariant].onSale ? "On sale" : ""
+         return this.variants[this.selectedVariant].onSale ? this.brand + " " + this.product + " is on sale" : ""
       }
    }
 })
