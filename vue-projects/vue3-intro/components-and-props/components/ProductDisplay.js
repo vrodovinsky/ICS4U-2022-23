@@ -1,9 +1,12 @@
 app.component(
-
     'product-display', {
     props: {
         premium: {
             type: Boolean,
+            required: true,
+        },
+        details: {
+            type: Array,
             required: true,
         }
     },
@@ -20,6 +23,7 @@ app.component(
           <p v-if="inStock">In Stock</p>
           <p v-else>Out of Stock</p>
           <p>{{'Shipping: ' + shipping}}</p>
+          <product-details :details="details"></product-details>
   
           <div 
             v-for="(variant, index) in variants" 
@@ -72,5 +76,5 @@ app.component(
         shipping() {
             return (this.premium) ? 'Free' : '$2.99'
         }
-    }
+    },
 })
