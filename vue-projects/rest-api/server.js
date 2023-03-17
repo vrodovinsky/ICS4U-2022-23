@@ -52,5 +52,15 @@ app.delete('/api/students/:id', (req, res) => {
     res.send(student)
 })
 
+app.get('/api/courses', (req, res) => {
+    res.send(courses)
+})
+
+let courses = [
+    { id: 1, name: 'Introduction to Computer Science', instructor: "John Smith" },
+    { id: 2, name: 'Web Development Fundamentals', instructor: "Jane Doe" },
+    { id: 3, name: 'Database Systems', instructor: "Bob Johnson" },
+]
+
 //Start the server
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
