@@ -1,7 +1,7 @@
 import express from 'express'
 
-const enviro = require('dotenv')
-enviro.config()
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 const app = express()
 const PORT = process.env.PORT || 1000
